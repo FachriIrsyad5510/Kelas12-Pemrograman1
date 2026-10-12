@@ -1,0 +1,25 @@
+.head {
+    color:gold
+
+}
+
+.body {
+    background-color:blue
+}
+
+.judul {
+    color: brown;
+    text-align: center;
+}
+.judulbahan {
+    color: blueviolet;
+}
+
+.langkah1 {
+    color: blueviolet;
+}
+
+.akhir {
+    color:crimson;
+    text-align: center;
+}
