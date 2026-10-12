@@ -164,9 +164,6 @@ git config --global user.email "email-github@contoh.com"
 
 5. Periksa hasilnya dengan `git config --global --list`. Nama dan email ini tercatat di setiap commit.
 
-6. # Pengenalan API dan Tools
-Disini akan digunakan beberapa tools
-
 # git scm
 Download git-scm dari https://git-scm.com/downloads
 
