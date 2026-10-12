@@ -87,7 +87,8 @@ Server dibedakan menjadi dua jenis. Server yang memproses database dan kode prog
 
 Siklus request-response adalah alur percakapan singkat antara browser dan server. Diagram berikut merangkum lima langkahnya.
 
-![Diagram siklus request-response](images/siklus-request-response.png)
+<img width="946" height="515" alt="image" src="https://github.com/user-attachments/assets/a313ca2a-1b74-4e6b-9b8d-9142e6b7d89f" />
+
 
 Kelima langkah itu dibaca sebagai berikut. Langkah pertama adalah pengguna mengetik URL lalu menekan `Enter`. Langkah kedua adalah browser mengirim HTTP request berisi method `GET` dan path file. Langkah ketiga adalah server mencari file lalu menyiapkan HTTP response. Langkah keempat adalah server mengirim response berisi file dan status code. Langkah kelima adalah browser membaca file lalu menampilkan halaman.
 
@@ -132,21 +133,25 @@ Agar GitHub mengenali pemilik push, komputer memerlukan bukti identitas berupa *
 
 1. Install VS Code dari [code.visualstudio.com](https://code.visualstudio.com) mengikuti instruksi instalasi di sana.
 
-![Halaman download VS Code](images/vscode-download.png)
+<img width="1705" height="917" alt="image" src="https://github.com/user-attachments/assets/fbd0c36a-02f2-4aba-bca2-4b2d5963c873" />
+
 
 2. Buka VS Code dan cari `Live Server` melalui panel Extensions.
 
-![Panel Extensions](images/panel-extensions.png)
+<img width="709" height="550" alt="image" src="https://github.com/user-attachments/assets/6614b716-f3d7-445e-893c-39566c402c2d" />
+
 
 3. Klik Install pada ekstensi `Live Server`.
 
-![Ekstensi Live Server](images/live-server.png)
+<img width="1069" height="231" alt="image" src="https://github.com/user-attachments/assets/1f56a832-058b-4ba2-8f03-165a5a2a3dec" />
+
 
 #### 3.1.2 Install dan Konfigurasi Git
 
 1. Install Git dari [git-scm.com/downloads](https://git-scm.com/downloads) mengikuti instruksi instalasi di sana. Git Bash ikut terinstal bersama Git.
 
-![Halaman download Git](images/git-download.png)
+<img width="1232" height="777" alt="image" src="https://github.com/user-attachments/assets/f8b56ef7-8359-4ae7-9fcf-a38445471dfd" />
+
 
 2. Buka Git Bash dari menu Start.
 3. Ketik `git --version`. Tekan `Enter`. Nomor versi Git harus muncul.
@@ -163,7 +168,8 @@ git config --global user.email "email-github@contoh.com"
 
 1. Buka [github.com](https://github.com) dan pilih Sign up.
 
-![Halaman utama GitHub](images/github-signup.png)
+<img width="1902" height="835" alt="image" src="https://github.com/user-attachments/assets/61e45f63-4048-4ed1-834f-6ca09ee9cc5c" />
+
 
 2. Isi email, password, dan username. Username muncul di URL halaman web nanti. Pilih username yang pantas dipakai untuk keperluan profesional.
 3. Verifikasi email lewat pesan yang dikirim GitHub.
@@ -187,7 +193,8 @@ cat ~/.ssh/id_ed25519.pub
 11. Di menu kiri pilih SSH and GPG keys. Klik New SSH key.
 12. Isi Title, misalnya `Laptop kuliah`. Paste kunci publik di kolom Key. Klik Add SSH key.
 
-![Formulir Add new SSH key](images/ssh-key-github.png)
+<img width="570" height="281" alt="image" src="https://github.com/user-attachments/assets/eedf49e3-afd8-46b2-af50-3799a9fdd18a" />
+
 
 Tampilan menu GitHub dapat sedikit berbeda dari urutan di atas.
 13. Tes koneksi dengan perintah berikut.
@@ -235,11 +242,13 @@ Di bagian ini halaman HTML pertama ditulis. Halaman dibuka di browser memakai Li
 
 5. Klik kanan pada file `index.html` dan pilih Open with Live Server.
 
-![Menu Open with Live Server](images/open-live-server.png)
+<img width="1202" height="857" alt="image" src="https://github.com/user-attachments/assets/a462d80b-eaa7-4e1f-a370-94407b66679d" />
+
 
 6. Browser terbuka otomatis dengan alamat `http://127.0.0.1:5500/index.html`. Nomor port dapat berbeda pada komputer lain.
 
-![Halaman yang terbuka di browser](images/halaman-browser.png)
+<img width="843" height="445" alt="image" src="https://github.com/user-attachments/assets/7632bcd6-e651-4b33-83e7-f26e0984c5b0" />
+
 
 Alamat tersebut menandakan halaman dilayani oleh server lokal yang dijalankan Live Server di komputer sendiri. Pada saat ini, client dan server berada di komputer yang sama. Halaman belum dapat diakses orang lain. Halaman baru dapat diakses publik setelah di-publish pada bagian Publikasi ke GitHub Pages.
 
@@ -247,15 +256,18 @@ Alamat tersebut menandakan halaman dilayani oleh server lokal yang dijalankan Li
 
 1. Pada halaman yang sedang terbuka, tekan `F12` atau klik kanan lalu pilih Inspect untuk membuka DevTools.
 
-![Menu Inspect di browser](images/devtools-inspect.png)
+<img width="785" height="597" alt="image" src="https://github.com/user-attachments/assets/e1768e83-f52c-4a24-9522-5d6316c1edc8" />
+
 
 2. Buka tab Network. Refresh halaman dengan `F5`. Daftar request yang dikirim browser muncul.
 
-![Tab Network](images/devtools-network.png)
+<img width="685" height="297" alt="image" src="https://github.com/user-attachments/assets/af46a1e8-a4ce-43e4-b400-1d9b00ebc1b2" />
+
 
 3. Klik baris `index.html` pada daftar tersebut. Perhatikan method `GET` dan status `200`.
 
-![Detail Headers](images/devtools-headers.png)
+<img width="674" height="383" alt="image" src="https://github.com/user-attachments/assets/ba8f5cb8-bd5e-479b-aeb3-efe81991545f" />
+
 
 ### 3.3 Publikasi ke GitHub Pages
 
@@ -265,27 +277,28 @@ Di bagian ini halaman masuk ke repo GitHub. Halaman di-publish di internet lewat
 
 1. Buka GitHub, klik tanda `+` di kanan atas, lalu pilih New repository.
 
-![Menu New repository](images/github-new-repository.png)
+<img width="674" height="383" alt="image" src="https://github.com/user-attachments/assets/760f0bed-80f6-41ee-8980-c6e702aa908d" />
+
 
 2. Isi form menjadi seperti ini:
 
-   ![Formulir New repository](images/repo-form.png)
+<img width="945" height="721" alt="image" src="https://github.com/user-attachments/assets/c2a9696b-5d2a-4868-92b4-704abfe34e89" />
+
 
 3. Klik Create repository.
 
-4. GitHub kemudian menampilkan halaman petunjuk. Pilih tab SSH agar URL repo diawali `git@github.com:`.
-
-   ![Halaman Quick setup SSH](images/repo-ssh.png)
 
 #### 3.3.2 Jadikan folder proyek sebagai repo Git
 
 1. Buka menu Terminal di VS Code lalu pilih New Terminal.
 
-   ![Menu Terminal di VS Code](images/terminal-menu.png)
+<img width="704" height="583" alt="image" src="https://github.com/user-attachments/assets/be1fd76e-6921-41d7-a5e2-b416fe49677a" />
+
 
 2. Pilih Git Bash lewat menu dropdown di panel terminal.
 
-   ![Daftar profil terminal](images/terminal-bash.png)
+<img width="704" height="583" alt="image" src="https://github.com/user-attachments/assets/3b6afe33-03cd-4d0d-9373-9338f5788fb5" />
+
 
 3. Jalankan perintah berikut.
 
@@ -317,7 +330,8 @@ git push -u origin main
 
 Refresh halaman repo di GitHub. File `index.html` sekarang muncul di sana.
 
-![Halaman repo berisi index.html](images/repo-pushed.png)
+<img width="1600" height="734" alt="image" src="https://github.com/user-attachments/assets/6454e556-0122-4537-a111-becf71363c9e" />
+
 
 
 ## 4. Referensi
