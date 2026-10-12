@@ -1,0 +1,20 @@
+body {
+    margin: 0%;
+    padding: 0%;
+}
+p {
+    color: black;
+    
+}
+
+div {
+    background-color: aquamarine;
+    padding-top: 0%;
+    text-align: center;
+}
+
+nav {
+    background-color: antiquewhite;
+    padding: auto;
+    
+}
