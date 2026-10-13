@@ -13,15 +13,15 @@ Klik dulu profil github, Klik Setting, pilih SSH and GPG keys
 ## Generate RSA Key
 Just One time for first instalation of git scm, 
 ```sh
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "emailkamu@gmail.com"
 ```
 
 ## Set config global
 Just One time for first instalation of git scm, 
 
 ```sh
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
+$ git config --global user.name "usernamekamu"
+$ git config --global user.email emailkamu@gmail.com
 ```
 ## Get SSH Key 
 to get ssh key in your computer, and put in your github or gitlab ssh key setting.
