@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <nav class=" p-5 bg-amber-50 shadow-md">
+        <div class=" flex justify-between px-20">
+            <h1 class="pixelify text-lg font-bold">Portfolio</h1>
+            <ul class="flex justify-center items-center gap-3 text-lg font-bold">
+                <li class="pixelify hover:text-blue-300">About</li>
+                <li class="pixelify hover:text-blue-300">Skill</li>
+                <li class="pixelify hover:text-blue-300">Story</li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class=" flex justify-center">
+        <div class="relative">
+            <img src="https://i.pinimg.com/1200x/bf/59/da/bf59da43940c39dcf29071d538fc648e.jpg" class="w-5xl"
+                alt="background main">
+            <div class="pixelify absolute top-28  justify-center w-full flex-col text-center">
+                <h1 class="font-bold text-9xl">MY Portfolio</h1>
+                <h2 class="font-bold text-2xl">Developer Ridhwan</h2>
+            </div>
+
+            <div class="justify-center flex w-full">
+                <div class="absolute top-80 w-full flex-col left-65">
+                    <div id="about" class=" bg-amber-100 rounded-lg h-auto w-[500px] my-3">
+                        <div class="w-full text-center flex-col">
+                            <h1 class="font-bold text-2xl">ABOUT</h1>
+                            <p>perkenalkan saya Ridhwan Sulaiam Suzana junior Developert Web,Games,Robotik</p>
+                        </div>
+                    </div>
+                    <div id="skill" class=" bg-amber-100 rounded-lg h-auto w-[500px] my-3">
+                        <div class="w-full text-center flex-col">
+                            <h1 class="font-bold text-2xl">Skill</h1>
+                            <p>C++ || Python || PHP || Reach || GODOT || C || ASM</p>
+                        </div>
+                    </div>
+                    <div id="story" class=" bg-amber-100 rounded-lg h-auto w-[500px] my-3">
+                        <div class="w-full text-center flex-col">
+                            <h1 class="font-bold text-2xl">Story</h1>
+                            <p>Lagi di cari cerita hidup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
