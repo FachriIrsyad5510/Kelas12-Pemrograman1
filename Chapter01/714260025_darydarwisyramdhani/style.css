@@ -73,4 +73,16 @@ footer {
     nav {
         gap: 12px;
 }
+
+#berada {
+    padding-top: 50px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+section {
+    padding: 35px 7%;
+}
 }
