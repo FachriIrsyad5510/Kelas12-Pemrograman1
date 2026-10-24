@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LATIHAN BLOG</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function t() {
+            var e = document.getElementById("komen");
+            e.style.display = "none" === e.style.display ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+<h2>GIBRAN NEWS</h2>
+<p>GIBRAN SEMAKIN DIDEPAN</p>
+<button onclick="t()">Komentar</button>
+<div id="komen" style="display: none;">
+    <p>Komentar:</p>
+    <textarea></textarea>
+    <button>Submit</button>
+    <h3>KOMENTAR</h3>
+    <p>KOMENTAR 1 : Ini KOMENTAR</p>
+    <p>KOMENTAR 2 : Ini KOMENTAR JUGA</p>
+</div>
+</body>
+</html>

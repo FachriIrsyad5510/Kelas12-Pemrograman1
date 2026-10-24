@@ -1,0 +1,47 @@
+.head {
+    color:gold
+
+}
+
+body {
+    background-color:blue;
+
+}
+
+.judul {
+    color: white;
+    text-align: center;
+}
+.judulbahan {
+    color: black;
+}
+
+.bahanbahan {
+    color:yellow;
+    border-radius: 10px;
+    border: 3px solid black;
+    background-color: red;
+    width: 500px;
+}
+
+.langkah1 {
+    color: black;
+}
+
+.langkah2 {
+    color: yellow;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: green;
+    width: 500px;
+}
+
+.akhir {
+    color:crimson;
+    text-align: center;
+}
+
+.background {
+    background-color: green;
+
+}
