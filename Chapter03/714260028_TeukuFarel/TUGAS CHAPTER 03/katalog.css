@@ -1,0 +1,29 @@
+body {
+    background-color: grey;
+}
+
+.judul {
+    color: white;
+    text-align: center;
+    border: 3px solid purple;
+    background-color: purple;
+    border-radius: 10px;
+    font-family: Arial;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: rgb(240, 15, 240);
+    color: white;
+    font-family: Arial;
+}
+
+a {
+    color: white
+}
+
+
+h2 {
+    color:white;
+}

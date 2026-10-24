@@ -1,0 +1,39 @@
+*,html{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-image:url(download\ \(1\).jpe.jpeg) ;
+}
+nav{
+    background-color: rgba(61, 59, 59, 0.719);
+    justify-content: space-between;
+    display:flex;
+    padding : 2rem;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap:15rem;
+    list-style:none;
+
+}
+nav ul li a{
+    text-decoration: none;
+    font-family: 'Segoe UI',sans-serif;
+    align-items: center;
+    gap: 4rem;
+    color: #ffffff;
+    font-weight: 600;
+    padding :   8px 0;
+    transition: all;
+    transition-duration: 300ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+nav ul li a:hover {
+    color: #ffffff;
+    border-bottom: 1px solid rgb(247, 244, 244);
+}
