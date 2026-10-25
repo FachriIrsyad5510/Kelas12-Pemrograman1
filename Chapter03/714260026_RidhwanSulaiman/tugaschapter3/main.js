@@ -20,8 +20,51 @@ loadSprite("fire", "assets/fire.png", {
     },
 });
 
-
 scene("canva", () => {
+
+    let firesExtinguished = 0;
+    let timeLeft = 30;
+    let gameOver = false;
+
+    const scoreLabel = add([
+        text("Api dipadamkan: 0", { size: 24 }),
+        pos(20, 20),
+        z(100),
+        color(255, 255, 255),
+        fixed(),
+    ]);
+
+    const timerLabel = add([
+        text("Waktu: 30", { size: 24 }),
+        pos(width() - 20, 20),
+        anchor("topright"),
+        z(100),
+        color(255, 255, 255),
+        fixed(),
+    ]);
+
+    const timerLoop = loop(1, () => {
+        if (gameOver) return;
+
+        timeLeft--;
+        timerLabel.text = `Waktu: ${timeLeft}`;
+
+        if (timeLeft <= 0) {
+            gameOver = true;
+            timerLoop.cancel();
+            add([
+                text(`Waktu habis!\nApi dipadamkan: ${firesExtinguished}`, {
+                    size: 36,
+                    align: "center",
+                }),
+                pos(center()),
+                anchor("center"),
+                z(200),
+                color(255, 255, 255),
+                fixed(),
+            ]);
+        }
+    });
 
     for (let i = 0; i < 4; i++) {
         for (let e = 0; e < 3; e++) {
@@ -62,11 +105,15 @@ scene("canva", () => {
 
             fire.play("anim");
             fire1.play("anim");
-
         }
     }
 
     onClick("fire", (f) => {
+        if (gameOver || f.isExtinguished) return;
+
+        f.isExtinguished = true;
+        f.untag("fire");
+
         f.use(opacity(1));
         tween(
             f.opacity,
@@ -76,9 +123,29 @@ scene("canva", () => {
             easings.easeOutQuad
         ).then(() => {
             destroy(f);
+            firesExtinguished++;
+            scoreLabel.text = `Api dipadamkan: ${firesExtinguished}`;
+
+            if (firesExtinguished >= 24) {
+                gameOver = true;
+                timerLoop.cancel();
+                add([
+                    text("SELAMAT!\nKamu berhasil padamkan 24 api!", {
+                        size: 40,
+                        align: "center",
+                    }),
+                    pos(center()),
+                    anchor("center"),
+                    z(200),
+                    color(255, 255, 0),
+                    fixed(),
+                ]);
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+            }
         });
     });
-
 
     const cursor = add([
         sprite("cursor"),

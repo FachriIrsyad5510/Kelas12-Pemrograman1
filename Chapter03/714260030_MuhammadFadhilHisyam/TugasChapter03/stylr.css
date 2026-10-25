@@ -1,0 +1,217 @@
+:root {
+  --purple: #5014b8;
+  --purple-dark: #5014b8;
+  --purple-soft: #000000;
+  --gray-900: #ece9e9;
+  --gray-600: #f6f3f3;
+  --gray-300: #000000;
+  --gray-100: #030303;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Arial,
+    sans-serif;
+  background: var(--gray-100);
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+
+main {
+  width: 100%;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.intro {
+  max-width: 640px;
+}
+
+.hello {
+  font-size: 1.2rem;
+  color: var(--gray-600);
+}
+
+.hello span {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.2;
+  margin: 8px 0;
+  color: var(--purple-dark);
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  margin-left: 6px;
+  background: var(--purple);
+  vertical-align: text-bottom;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.ttl {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+}
+
+/* ---------- Tombol ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn.primary {
+  background: var(--purple);
+  color: #e8e3e3;
+}
+
+.btn.primary:hover {
+  background: var(--purple-dark);
+}
+
+.btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--purple-soft);
+  outline-offset: 2px;
+}
+
+/* ---------- Contact ---------- */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 24px;
+  background: #050404;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--gray-900);
+}
+
+h2 span {
+  color: var(--purple);
+}
+
+.section-desc {
+  max-width: 480px;
+  margin: 8px 0 28px;
+  color: var(--gray-600);
+}
+
+form {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px;
+  text-align: left;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  border-radius: 12px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--gray-900);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font: inherit;
+  color: var(--gray-900);
+  background: #fff;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--purple);
+}
+
+textarea {
+  resize: vertical;
+}
+
+form .btn {
+  margin-top: 8px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
