@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello word</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absensi Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello word</h1>
+  <header class="header">
+    <h1>Absensi Mahasiswa</h1>
+    <p>Catat kehadiranmu dengan mudah.</p>
+  </header>
+
+  <main class="container">
+    <section class="card profile">
+      <img src="profil.png" alt="Foto profil mahasiswa" class="photo">
+      <div>
+        <h2>Nama Mahasiswa</h2>
+        <p>D4 Teknik Informatika</p>
+        <p>Universitas Logistik dan Bisnis Internasional</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Absensi Hari Ini</h2>
+      <p id="clock">Memuat tanggal dan waktu...</p>
+      <p id="message">Pilih status kehadiranmu.</p>
+      <div class="buttons">
+        <button class="present" onclick="absen('Hadir')">Hadir</button>
+        <button class="permission" onclick="absen('Izin')">Izin</button>
+        <button class="sick" onclick="absen('Sakit')">Sakit</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Riwayat Absensi</h2>
+      <ul id="history"><li>Belum ada absensi hari ini.</li></ul>
+    </section>
+
+    <section class="card">
+      <h2>Link Menarik</h2>
+      <div class="links">
+        <a href="https://ulbi.ac.id/" target="_blank" rel="noopener noreferrer">🌐 Website ULBI</a>
+        <a href="https://classroom.google.com/" target="_blank" rel="noopener noreferrer">📚 Google Classroom</a>
+        <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">🔎 Google</a>
+        <a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">💻 Belajar HTML</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Web Absensi Mahasiswa — Proyek latihan</footer>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const date = now.toLocaleDateString("id-ID", {
+        weekday: "long", day: "numeric", month: "long", year: "numeric"
+      });
+      document.getElementById("clock").textContent =
+        date + " • " + now.toLocaleTimeString("id-ID");
+    }
+
+    function absen(status) {
+      const now = new Date();
+      const time = now.toLocaleTimeString("id-ID");
+      const date = now.toLocaleDateString("id-ID");
+      document.getElementById("message").textContent =
+        "Absensi dicatat: " + status + " pada " + time + ".";
+      const history = document.getElementById("history");
+      if (history.children.length === 1 &&
+          history.children[0].textContent === "Belum ada absensi hari ini.") {
+        history.innerHTML = "";
+      }
+      const item = document.createElement("li");
+      item.textContent = date + " — " + time + " — " + status;
+      history.prepend(item);
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 </body>
 </html>

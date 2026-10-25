@@ -1,0 +1,446 @@
+/* =========================
+   RESET DAN PENGATURAN DASAR
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #111111;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dddddd;
+    background: #ffffff;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+}
+
+.brand h2 {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.brand p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #777777;
+    margin-top: 4px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #111111;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 2px solid #111111;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #777777;
+    border-color: #777777;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 570px;
+    padding: 70px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: #111111;
+    color: #ffffff;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #888888;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 85px);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin: 25px 0;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #888888;
+}
+
+.deskripsi {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #cccccc;
+}
+
+.deskripsi b {
+    color: #ffffff;
+}
+
+/* TOMBOL MULAI ABSENSI */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    margin-top: 25px;
+    padding: 15px 22px;
+    background: #ffffff;
+    color: #111111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #cccccc;
+    transform: translateY(-3px);
+}
+
+/* LOGO ULBI */
+
+.hero-logo {
+    width: 300px;
+    text-align: center;
+}
+
+.hero-logo img {
+    width: 100%;
+    max-width: 270px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 8px solid #ffffff;
+    border-radius: 20px;
+    filter: grayscale(100%);
+}
+
+.hero-logo h3 {
+    margin-top: 20px;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.hero-logo p {
+    margin-top: 10px;
+    font-size: 10px;
+    line-height: 1.7;
+    color: #aaaaaa;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   BAGIAN DAFTAR MAHASISWA
+========================= */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 75px 7%;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    margin-top: 12px;
+    font-size: 45px;
+    letter-spacing: -2px;
+}
+
+.section-title h2 span {
+    color: #999999;
+}
+
+.total {
+    text-align: center;
+}
+
+.total strong {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.total p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777777;
+}
+
+/* =========================
+   PENCARIAN
+========================= */
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 0;
+    margin-bottom: 15px;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+
+.toolbar input {
+    width: 65%;
+    padding: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+}
+
+.toolbar input:focus {
+    border-color: #111111;
+}
+
+.jumlah-hadir {
+    font-size: 13px;
+    color: #666666;
+    white-space: nowrap;
+}
+
+.jumlah-hadir strong {
+    color: #111111;
+    font-size: 20px;
+}
+
+/* =========================
+   KARTU MAHASISWA
+========================= */
+
+.student-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.student-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    min-width: 0;
+    padding: 22px 17px;
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.student-card:hover {
+    border-color: #111111;
+    background: #f8f8f8;
+    transform: translateY(-2px);
+}
+
+.nomor {
+    font-size: 14px;
+    font-weight: bold;
+    color: #999999;
+}
+
+.student-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.student-info h3 {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+}
+
+.student-info .nim {
+    color: #777777;
+    margin-bottom: 12px;
+    font-size: 12px;
+}
+
+.student-info p {
+    font-size: 11px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+    color: #555555;
+}
+
+.student-info b {
+    color: #111111;
+}
+
+/* =========================
+   CHECKBOX ABSENSI
+========================= */
+
+.check-hadir {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.check-hadir input {
+    width: 16px;
+    height: 16px;
+    accent-color: #111111;
+    cursor: pointer;
+}
+
+.student-card:has(.check-hadir input:checked) {
+    background: #eeeeee;
+    border-color: #888888;
+}
+
+/* =========================
+   CATATAN
+========================= */
+
+.catatan {
+    margin-top: 25px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #777777;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background: #111111;
+    color: #aaaaaa;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   RESPONSIVE UNTUK HP
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .brand img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand h2 {
+        font-size: 18px;
+    }
+
+    .brand p {
+        font-size: 8px;
+    }
+
+    .nav-link {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 7%;
+    }
+
+    .hero-logo {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .container {
+        padding: 50px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .total strong {
+        font-size: 30px;
+    }
+
+    .student-list {
+        grid-template-columns: 1fr;
+    }
+
+    .toolbar {
+        flex-wrap: wrap;
+    }
+
+    .toolbar input {
+        width: 100%;
+    }
+
+    .jumlah-hadir {
+        margin-top: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 25px 5%;
+        font-size: 9px;
+    }
+}
