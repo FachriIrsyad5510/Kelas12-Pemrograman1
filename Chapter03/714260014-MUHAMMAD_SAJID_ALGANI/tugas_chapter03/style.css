@@ -1,0 +1,320 @@
+/* Font: lebih baik dimuat lewat <link> di HTML (lihat catatan di bawah),
+   tapi @import dipertahankan agar file ini tetap berdiri sendiri. */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap");
+
+/* ---------- Token ---------- */
+:root {
+  --bg: #bb9451;           /* ivory hangat */
+  --ink: #1f1a24;          /* hitam keunguan */
+  --muted: #f6f5f7;        /* abu plum */
+  --accent: #000000;       /* plum pekat */
+  --accent-dark: #000000;  /* hover: lebih gelap */
+  --accent-soft: #e4d8ea;  /* latar placeholder foto */
+  --gold: #b08d57;         /* emas redup, khusus hiasan */
+  --line: #e4dce6;
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Consolas", monospace;
+
+  --header-h: 72px;
+  --typing-chars: 20; /* samakan dengan jumlah karakter teks mengetik */
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Agar judul section tidak tertutup header sticky saat navigasi anchor */
+section,
+[id] {
+  scroll-margin-top: var(--header-h);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Header ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 clamp(1rem, 5vw, 4rem);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+nav {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2.25rem);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+nav a {
+  position: relative;
+  padding: 0.35rem 0;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--ink);
+}
+
+nav a:hover::after,
+nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Home ---------- */
+.home {
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem clamp(1rem, 5vw, 2rem);
+  display: grid;
+  grid-template-columns: minmax(240px, 360px) 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 6rem);
+}
+
+/* Foto dengan blok emas bergeser di belakangnya */
+.home-img {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+}
+
+.home-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(18px, 18px);
+  background: var(--gold);
+  border-radius: 20px;
+}
+
+.home-img img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 20px;
+  background: var(--accent-soft);
+}
+
+/* ---------- Konten ---------- */
+.home-content h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  line-height: 1.2;
+  color: var(--muted);
+}
+
+.home-content h1 span {
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+/* Efek mengetik: ubah --typing-chars di :root jika teks berganti */
+.typing-text {
+  display: inline-block;
+  margin: 1.1rem 0 1.25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--accent);
+  width: calc(var(--typing-chars) * 1ch);
+  max-width: 100%;
+  border-right: 3px solid var(--accent);
+  animation:
+    typing 2.4s steps(var(--typing-chars)) 0.6s both,
+    caret 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.home-content p {
+  max-width: 60ch;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ---------- Ikon sosial ---------- */
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.75rem 0 1.5rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 1.25rem;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.social-icons a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Tombol ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 820px) {
+  .home {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .home-img {
+    max-width: 280px;
+    margin-right: 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    height: auto;
+    min-height: var(--header-h);
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  section,
+  [id] {
+    scroll-margin-top: calc(var(--header-h) + 3rem);
+  }
+}
+
+/* ---------- Kurangi gerakan ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .typing-text {
+    animation: none;
+    width: auto;
+    border-right-color: transparent;
+  }
+
+  nav a::after,
+  .btn,
+  .social-icons a {
+    transition: none;
+  }
+}
