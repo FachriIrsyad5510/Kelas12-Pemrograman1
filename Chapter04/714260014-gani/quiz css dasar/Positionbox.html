@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contoh CSS Position, Box Shadow, dan Animation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: #ecf0f1; /* cadangan jika gambar tidak ditemukan */
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Kotak biru sebagai acuan posisi */
+      .container {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background-color: #3498db;
+        margin: 100px auto;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Kotak merah di tengah container */
+      .box {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #e74c3c;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.5s;
+        cursor: pointer;
+      }
+
+      /* Animasi saat kursor diarahkan ke container */
+      .container:hover .box {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      /* Responsif untuk layar kecil */
+      @media (max-width: 400px) {
+        .container {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
