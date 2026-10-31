@@ -1,0 +1,238 @@
+/* ===== Dasar ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.6;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #f39c12;
+  outline-offset: 2px;
+}
+
+/* ===== Header & Navigasi ===== */
+header {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #27ae60;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+}
+
+nav a:hover,
+nav a.aktif {
+  background-color: #219150;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.container.satu-kolom {
+  display: block;
+}
+
+.main-content {
+  flex: 1 1 65%;
+  min-width: 0;
+}
+
+.sidebar {
+  flex: 1 1 25%;
+  min-width: 0;
+}
+
+h2 {
+  color: #1e8449;
+  margin-top: 0;
+}
+
+.main-content h2:not(:first-child) {
+  margin-top: 24px;
+}
+
+/* ===== Tombol ===== */
+.tombol {
+  display: inline-block;
+  background-color: #1e8449;
+  color: white;
+  text-decoration: none;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.tombol:hover {
+  background-color: #186a3b;
+}
+
+/* ===== Hero (Beranda) ===== */
+.hero {
+  background-color: #3498db;
+  color: white;
+  padding: 36px 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero h2 {
+  color: white;
+  font-size: 28px;
+}
+
+/* ===== Kartu ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.kartu {
+  border: 1px solid #ddd;
+  border-top: 4px solid #3498db;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.kartu h3 {
+  margin-top: 0;
+}
+
+.kartu p {
+  margin-bottom: 0;
+}
+
+/* ===== Tabel (Layanan) ===== */
+.tabel-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #04aa6d;
+  color: white;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* ===== Formulir (Kontak) ===== */
+form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+form .tombol {
+  margin-top: 16px;
+}
+
+/* Tersembunyi sampai formulir dikirim */
+#pesan-terkirim {
+  display: none;
+  background-color: #d5f5e3;
+  border-left: 4px solid #1e8449;
+  padding: 10px 15px;
+  margin-top: 16px;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ===== Responsif ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 20px 10px;
+  }
+
+  .main-content,
+  .sidebar {
+    flex: none;
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
