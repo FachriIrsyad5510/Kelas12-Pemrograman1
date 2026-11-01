@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tampilan website responsif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: blueviolet;
+        }
+
+        header {
+            background-color: plum;
+            color: whitesmoke;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: purple;
+        }
+        nav a {
+            text-decoration: none;
+            color: aliceblue;
+            padding: 10px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20 px auto;
+            padding: 20px;
+            background-color: aliceblue;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+         }
+         .main-content {
+            flex:70%
+         }
+         .sidebar {
+            flex: 30%;
+         }
+         footer {
+            background-color: bisque;
+            color: burlywood;
+            text-align: center;
+            padding: 10px;
+        }
+        @media (max-width: 786px) {
+            .container{
+                flex-direction: column;
+            }
+            .main-content,
+            .sidebar{
+            width: 100%;
+            }
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <h1> SELAMAT DATANG DI PENYANGKALAN </h1>
+    </header>
+    <nav>
+        <a href="#"> HOME </a>
+        <a href="#"> PENYANGKALAN </a>
+        <a href="#"> LAYANAN </a>
+        <a href="#"> KONTAK </a>
+    
+    </nav>
+    <div class="container">
+        <div class="main-content">
+            <h2> SELAMAT DATANG DI AREA PENYANGKALAN</h2>
+            <p>
+                Secara konsep, denial atau penyangkalan itu salah satu mekanisme pertahanan diri (defense mechanism) paling klasik yang dipunya manusia. Otak kita tuh pintar banget (atau rada licik) buat "pura-pura gak lihat" kenyataan yang terlalu pahit atau bikin stres, biar jiwa kita gak kaget atau burnout duluan.Kalau mau dibedah, penyangkalan itu ada beberapa 'fase' atau wujud uniknya dalam kehidupan sehari-hari:1. Penyangkalan ala Anak Kuliahan / CodingIni jenis penyangkalan yang paling dekat sama kehidupan kita sehari-hari:"Ah, deadline masih 2 minggu lagi, santai..." Padahal modusnya ada 530 baris CSS dan 4 file HTML yang harus diketik dari nol. Otak memilih meyakini kalau waktu 2 minggu itu terasa kayak 2 tahun.   "Bener kok kodingan gue, pasti VS Code atau browser-nya yang error/lag!" Padahal ternyata cuma gara-gara salah ngetik spasi di class=" main-content" atau lupa tanda > di HTML."Gak apa-apa, error 10 biji mah kecil, nanti juga beres sendiri." Spoiler: Pas di-Ctrl + S, errornya malah nambah jadi 25.2. Penyangkalan ala Fiksi / Drama (Mahitala Style)Kalau di dunia cerita atau drama sci-fi/corporate, penyangkalan itu bumbu paling mantap buat bikin konflik karakter makin dalam:Karakter yang berpura-pura semua sistem kantor aman-aman aja, padahal di balik layar korporatnya lagi di ambang kehancuran.Seorang tokoh yang denial sama perasaannya sendiri: "Gue gak peduli kok sama dia, cuma kasihan aja," padahal aksinya bela-belain pasrah kena masalah demi ngelindungin orang itu.3. Penyangkalan Makanan & Jam Tidur (Kos-kosan Edition)"Makan mi instan jam 2 malam gak bakal bikin berat badan naik kok, kan tadi siang cuma makan wortel sama sawi.""Tidur jam 3 pagi, bangun jam 6 pagi... lumayan lah, dapat 3 jam tidur berkualitass!" Padahal pas bangun muka udah kayak zombie dan nyawa belum terkumpul sampai siang.
+            </p>
+        </div>
+        <br>
+        <div class="sidebar"
+            <h3> Cara Healing </h3>
+            <ul>
+                <li> ibadah </li>
+                <li> Liburan </li>
+                <li> Tidur </li>
+            </ul>
+    </div>
+</body>
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
