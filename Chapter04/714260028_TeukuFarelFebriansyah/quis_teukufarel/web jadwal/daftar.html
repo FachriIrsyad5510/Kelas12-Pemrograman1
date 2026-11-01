@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - HUDLINK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>HUDLINK WEB</h1>
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="jadwal.html">Jadwal</a></li>
+                <li><a href="daftar.html" aria-current="page">Daftar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="konten">
+        <section>
+            <h2>Pendaftaran</h2>
+            <form action="" method="get">
+                <p>
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" required minlength="3" placeholder="Tulis nama lengkap">
+                     <label for="nama">NIK</label>
+                    <input type="text" id="nik" name="nik" required minlength="3" placeholder="Tulis NIK sesuai KK/KTP">
+                </p>
+                <p>
+                    <label for="hp">Nomor HP</label>
+                    <input type="tel" id="hp" name="hp" required pattern="[0-9]{10,14}" placeholder="Contoh : 081234567890">
+                    <label for="hp">Email</label>
+                    <input type="tel" id="email" name="email" required pattern="[0-9]{10,14}" placeholder="Contoh : abahganteng@gmail.com">
+                </p>
+                <p>
+                    <label for="sesi">Pilihan Pelajaran</label>
+                    <select id="sesi" name="sesi" required>
+                        <option value="">Pilih satu Pelajaran</option>
+                        <option value="html">Bahasa Indonesia</option>
+                        <option value="css">Bahasa Inggris</option>
+                        <option value="git">Informatika</option>
+                        <option value="git">Struktur Data</option>
+                        <option value="git">Pendidikan Pancasila<option>
+                    </select>
+                </p>
+                <p>
+                    <span>Kehadiran</span>
+                    <label><input type="radio" name="hadir" value="luring" checked> Offline</label>
+                    <label><input type="radio" name="hadir" value="daring"> Online</label>
+                </p>
+                <p>
+                    <label for="semester">Kelas</label>
+                    <input type="number" id="semester" name="semester" min="7" max="12" value="7" required>
+                </p>
+                <p>
+                    <label for="catatan">Kendala</label>
+                    <textarea id="catatan" name="catatan" rows="3" placeholder="Contoh butuh colokan listrik"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Kirim pendaftaran</button>
+                </p>
+            </form>
+        </section>
+    </main>
+   <footer>
+        <a href="https://instagram.com/teukuufarelll_" target="_blank">Follow Instagram </a>
+        <a href="https://github.com/teukufarel62-lab" target="_blank">& Github <em>Hudlink</em> Disini!</a>        
+        <hr>
+        <p><em>Hudlink</em> Jl.Pluto No.123, Gedung Korax. Kontak Admin 0823-1223-3233</p>
+    </footer>
+</body>
+</html>

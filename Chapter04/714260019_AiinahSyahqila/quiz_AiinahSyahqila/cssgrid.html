@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css dan grid selector</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .item {
+            background-color: #13091D ;
+            color: white;
+            padding: 20px;
+            text-align: center ;
+            font-size: 25px;
+        }
+        .special {
+            background-color: blueviolet;
+
+        }
+        .unique {
+            background-color:#3d02aa;
+        }
+        .container p {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1> css grid dan selector</h1>
+    <div class="container">
+        <div class="item"> PAJERO</div>
+        <div class="item">ALPHARD</div>
+        <div class="item special">LAMBORGHINI</div>
+        <div class="item">HR-V</div>
+        <div class="item">BRIO</div>
+        <div class="item unique">BUGATTI TOUBILLION </div>
+    </div>
+    <P> INI ADALAH CONTOH TEKS DALAM CLASS CONTAINER</P>
+    <P> INI ADALAH TEKS DI LUAR CONTAINER</P>
+    
+</body>
+</html>

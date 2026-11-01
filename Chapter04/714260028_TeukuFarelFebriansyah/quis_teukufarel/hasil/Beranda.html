@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: azure;
+        }
+
+        header {
+            background-color: aqua;
+            color: white;
+            text-align: center;
+            padding: 20x;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: blue;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: antiquewhite;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .main-content {
+            flex: 70%
+        }
+
+        @media (max-width: 768px) {
+            .container{
+                flex-direction: column;
+            }
+            .main-content,
+            .sidebar {
+                width: 100%;
+            }
+        }
+
+        h1, h2 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>WELCOME CICI PARFUM</h1>
+    </header>
+    <nav>
+        <a href="hasil.html">Home</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="layanan.html">Layanan</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+    <div class="container">
+        <div class="main-content">
+            <h2>SEJARAH PARFUM</h2>
+            <p>
+               Kata parfum berasal dari bahasa Latin, “per” yang berarti thorough (menyeluruh atau melalui) dan “fumus” yang berarti smoke (asap). Orang-orang Prancis kemudian memberi nama “perfume” untuk aroma yang dihasilkan dari pembakaran dupa. Memang bentuk pertama parfum merupakan dupa yang pertama kali dibuat oleh Mesopotamia sekitar 4000 tahun yang lalu. 
+
+Sejarah parfum dimulai dari budaya kuno membakar berbagai damar dan kayu pada acara keagamaan Mesopotamia. Kemudian dupa masuk ke Mesir sekitar 3000 SM, namun hingga awal Zaman Keemasan Mesir (Egypt’s Golden Age), parfum hanya digunakan dalam ritual keagamaan. Mereka biasanya merendam diri dalam minyak wangi untuk kesenangan. 
+
+Orang Yunani kuno pertama kali berhasil menciptakan parfum cair pertama, dengan teknologi penyulingan yang dilakukan oleh orang-orang Arab. Selama abad ketujuh belas, parfum meraih kesuksesan besar, terutama di Prancis. Sejarah parfum kala itu digunakan sebagai wewangian untuk menutupi bau badan yang tidak sedap. Sementara di Inggris, parfum digunakan secara luas selama pemerintahan Henry VIII dan Ratu Elizabeth I. Seluruh tempat umum diberi wewangian selama pemerintahan sang Ratu karena ia tidak bisa mentoleransi bau yang tidak sedap.
+            </p>
+        </div>
+    </div>
+</body>

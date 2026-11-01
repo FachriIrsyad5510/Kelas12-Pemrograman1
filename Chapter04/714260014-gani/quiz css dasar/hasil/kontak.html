@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kirim pesan atau hubungi tim Website Bandung." />
+    <title>Kontak - Website Bandung</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hubungi Kami</h1>
+    </header>
+
+    <nav>
+      <a href="hasil.html">Beranda</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="kontak.html" class="aktif" aria-current="page">Kontak</a>
+    </nav>
+
+    <div class="container">
+      <div class="main-content">
+        <h2>Kirim Pesan</h2>
+        <form id="form-kontak">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" autocomplete="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="5" required></textarea>
+
+          <button type="submit" class="tombol">Kirim pesan</button>
+        </form>
+        <p id="pesan-terkirim" role="status">Terima kasih! Pesanmu sudah kami terima.</p>
+      </div>
+
+      <div class="sidebar">
+        <h3>Info Kontak</h3>
+        <ul>
+          <li>Alamat: Jl. Asia Afrika, Bandung</li>
+          <li>Email: info@websitebandung.example</li>
+          <li>Telepon: 0812-0000-0000</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Website Bandung. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+      // Formulir ini hanya demo: pesan tidak dikirim ke server.
+      document.getElementById("form-kontak").addEventListener("submit", function (e) {
+        e.preventDefault();
+        document.getElementById("pesan-terkirim").style.display = "block";
+        this.reset();
+      });
+    </script>
+  </body>
+</html>
