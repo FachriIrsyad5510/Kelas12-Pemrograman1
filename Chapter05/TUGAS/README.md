@@ -1,9 +1,9 @@
-# 📌 TUGAS PRAKTIKUM – PEMBUATAN WEBSITE SEDERHANA
+# TUGAS PRAKTIKUM – PEMBUATAN WEBSITE SEDERHANA
 
-## 📖 Deskripsi Tugas
+## Deskripsi Tugas
 Buatlah sebuah website sederhana menggunakan **HTML, CSS, dan JavaScript** dengan memilih salah satu tema yang telah disediakan.
 
-## 🎯 Pilihan Tema
+## Pilihan Tema
 Pilih salah satu tema berikut:
 
 1. Personal Portfolio
@@ -15,7 +15,7 @@ Pilih salah satu tema berikut:
 7. News Portal
 8. Expense Tracker
 
-## 📋 Ketentuan Pengerjaan
+## Ketentuan Pengerjaan
 
 1. Kerjakan tugas secara individu.
 2. Buat folder dengan format `NIM_NamaMahasiswa`.
@@ -25,7 +25,7 @@ Pilih salah satu tema berikut:
 6. Buat README.md pada folder tugas masing-masing.
 7. Pastikan website dapat dijalankan dengan baik tanpa error.
 
-## 📁 Struktur Folder
+## Struktur Folder
 
 ```text
 NIM_NamaMahasiswa/
@@ -37,21 +37,21 @@ NIM_NamaMahasiswa/
     └── images/
 ```
 
-## 🚀 Pengumpulan Tugas
+## Pengumpulan Tugas
 
 1. Kerjakan seluruh file pada folder masing-masing.
 2. Lakukan `commit` dan `push` ke repository kelas.
 3. Buat **Pull Request (PR)** ke repository utama.
 4. Pastikan seluruh file sudah masuk ke Pull Request.
 
-## 📦 Output yang Dikumpulkan
+## Output yang Dikumpulkan
 
 - Source code HTML, CSS, dan JavaScript.
 - File README.md.
 - Screenshot tampilan website (desktop dan mobile).
 - Link Pull Request.
 
-## 📝 Kriteria Penilaian
+## Kriteria Penilaian
 
 | Aspek | Bobot |
 |---|---:|
@@ -63,7 +63,7 @@ NIM_NamaMahasiswa/
 | Git dan dokumentasi | 10% |
 | **Total** | **100%** |
 
-## ⚠️ Catatan
+## Catatan
 
 - Tugas dikerjakan secara individu.
 - Penggunaan AI diperbolehkan sebagai alat bantu.
