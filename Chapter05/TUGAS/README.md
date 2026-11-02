@@ -43,6 +43,7 @@ NIM_NamaMahasiswa/
 2. Lakukan `commit` dan `push` ke repository kelas.
 3. Buat **Pull Request (PR)** ke repository utama.
 4. Pastikan seluruh file sudah masuk ke Pull Request.
+5. Kumpulan hasil pekerjaannya dalam **format PDF** ke **Edlink**
 
 ## Output yang Dikumpulkan
 
