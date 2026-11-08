@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registrasi - Kopi Senja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+
+    <div class="container">
+
+        <div class="auth-tabs" style="margin-bottom: 20px; display: flex; gap: 10px;">
+            <button id="tabLogin" type="button" class="btn" onclick="switchTab('login')">Masuk</button>
+            <button id="tabRegister" type="button" class="btn" onclick="switchTab('register')" style="background-color: #666;">Registrasi</button>
+        </div>
+
+        <div id="loginSection">
+            <h2>Selamat datang kembali</h2>
+            <p class="subtitle">Masuk untuk melanjutkan ke Kopi Senja.</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Masuk Sebagai</label>
+                    <select id="roleSelect" class="input-select" required>
+                        <option value="customer">Customer (Pelanggan)</option>
+                        <option value="admin">Admin Kafe</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Email atau Username</label>
+                    <input type="text" id="username" placeholder="nama@gmail.com / admin" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Kata sandi</label>
+                    <input type="password" id="password" placeholder="Minimal 6 karakter" required>
+                </div>
+
+                <button type="submit" class="btn">Masuk</button>
+            </form>
+        </div>
+
+        <div id="registerSection" style="display: none;">
+            <h2>Daftar Akun Baru</h2>
+            <p class="subtitle">Registrasikan email Anda sebelum melakukan login.</p>
+            
+            <form id="registerForm">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="regEmail" placeholder="nama@gmail.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Kata sandi</label>
+                    <input type="password" id="regPassword" placeholder="Minimal 6 karakter" required>
+                </div>
+
+                <button type="submit" class="btn">Daftar Sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

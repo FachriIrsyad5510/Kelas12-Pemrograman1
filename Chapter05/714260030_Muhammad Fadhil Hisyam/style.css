@@ -1,0 +1,892 @@
+/* ---------- 1. Variabel & reset ---------- */
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --tx: #f5f5f4;
+  --mut: #a8a29e;
+  --pri: #f97316;   /* oranye */
+  --sec: #dc2626;   /* merah */
+  --cy: #a3e635;    /* aksen lime */
+  --ok: #22c55e;
+  --warn: #f59e0b;
+  --bad: #ef4444;
+  --bd: rgba(249, 115, 22, .35);
+  --grad: linear-gradient(135deg, #f97316, #dc2626);
+  --r: 16px;
+}
+
+/* Mode terang */
+[data-theme=light] {
+  --bg: #faf6f1;
+  --card: #fff;
+  --tx: #1c1917;
+  --mut: #6b625c;
+  --pri: #ea580c;
+  --cy: #4d7c0f;
+  --bd: rgba(234, 88, 12, .3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  font: 400 15px/1.6 Poppins, sans-serif;
+  background: var(--bg);
+  color: var(--tx);
+  padding-bottom: 70px;
+}
+
+h1, h2, h3,
+.logo, .cd, .tot {
+  font-family: Rajdhani, sans-serif;
+  letter-spacing: .3px;
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin: 0 0 14px;
+}
+
+a {
+  color: var(--cy);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+
+/* ---------- 2. Komponen dasar ---------- */
+input {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--bd);
+  background: var(--bg);
+  color: var(--tx);
+  font: inherit;
+}
+
+/* Fokus keyboard yang jelas */
+input:focus,
+button:focus-visible,
+a:focus-visible,
+.card:focus-visible {
+  outline: 2px solid var(--cy);
+  outline-offset: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.empty {
+  color: var(--mut);
+  padding: 20px 0;
+}
+
+.back {
+  min-height: 44px;
+  margin-bottom: 10px;
+  background: none;
+  border: 0;
+  color: var(--cy);
+}
+
+/* Tombol */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--grad);
+  color: #fff;
+  font-weight: 600;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(249, 115, 22, .5);
+}
+
+.btn.sm {
+  min-height: 44px;
+  padding: 0 14px;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--cy);
+  color: var(--cy);
+}
+
+.btn.full {
+  width: 100%;
+  margin-top: 8px;
+}
+
+
+/* ---------- 3. Navbar ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--bd);
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--tx);
+}
+
+.logo i {
+  color: var(--cy);
+}
+
+.logo span {
+  color: var(--pri);
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.ic {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--bd);
+  background: var(--card);
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  padding: 0 5px;
+  border-radius: 99px;
+  background: var(--cy);
+  color: #111;
+  font-size: .7rem;
+}
+
+.search {
+  order: 5;
+  flex: 1 1 100%;
+  position: relative;
+}
+
+.search i {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  color: var(--mut);
+}
+
+.search input {
+  padding-left: 40px;
+}
+
+/* Menu: tersembunyi di mobile, tampil saat hamburger dibuka */
+#menu {
+  order: 6;
+  flex: 1 1 100%;
+  display: none;
+  flex-direction: column;
+}
+
+#menu.open {
+  display: flex;
+}
+
+#menu a {
+  padding: 12px 4px;
+  color: var(--tx);
+  text-decoration: none;
+  border-bottom: 1px solid var(--bd);
+}
+
+/* Label teks tombol login disembunyikan di layar kecil */
+.lbl {
+  display: none;
+}
+
+
+/* ---------- 4. Hero & Flash Sale ---------- */
+.hero {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 7%;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;   /* slide yang tidak aktif tidak menangkap klik */
+  transition: opacity .8s;
+}
+
+.slide.on {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Slide banner penuh (gambar) */
+.slide.banner {
+  cursor: pointer;
+}
+
+/* Teks untuk pembaca layar saja */
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.slide h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.slide .btn {
+  align-self: flex-start;
+  margin-top: 12px;
+  background: #fff;
+  color: #7c2d12;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dots button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, .45);
+}
+
+.dots .on {
+  width: 24px;
+  background: #fff;
+}
+
+/* Flash sale */
+.flash {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+  border-radius: var(--r);
+  border: 1px solid var(--bd);
+  background: linear-gradient(120deg, rgba(249, 115, 22, .3), rgba(163, 230, 53, .18));
+}
+
+.flash h2 {
+  margin: 0;
+}
+
+.flash i {
+  color: var(--warn);
+}
+
+.cd {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--cy);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ---------- 5. Grid game ---------- */
+.chips {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 10px;
+  overflow-x: auto;
+}
+
+.chip {
+  flex: none;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 99px;
+  border: 1px solid var(--bd);
+  background: var(--card);
+}
+
+.chip.on {
+  background: var(--grad);
+  border-color: transparent;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.game {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.game:hover {
+  transform: translateY(-5px);
+  border-color: var(--cy);
+  box-shadow: 0 10px 30px rgba(249, 115, 22, .3);
+}
+
+.thumb {
+  position: relative;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  font-size: 2.6rem;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Logo game (gambar) */
+.thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* gambar tampil utuh, tidak terpotong */
+}
+
+.game h3 {
+  padding: 10px 12px 0;
+  font-size: 1.15rem;
+}
+
+.game p {
+  padding: 0 12px 12px;
+  color: var(--mut);
+  font-size: .8rem;
+}
+
+/* Skeleton loading */
+.sk {
+  height: 170px;
+  border-radius: var(--r);
+  background: linear-gradient(90deg, var(--card) 25%, rgba(249, 115, 22, .2) 50%, var(--card) 75%);
+  background-size: 200% 100%;
+  animation: sh 1.2s infinite;
+}
+
+@keyframes sh {
+  to { background-position: -200% 0; }
+}
+
+
+/* ---------- 6. Detail, keranjang, pembayaran, dashboard ---------- */
+.det {
+  display: grid;
+  gap: 14px;
+}
+
+.hd {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  border: 0;
+}
+
+.hd i {
+  font-size: 2.4rem;
+}
+
+.hd h2 {
+  margin: 0;
+}
+
+/* Logo di header detail */
+.hlogo {
+  position: relative;
+  flex: none;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 14px;
+  font-size: 2.4rem;
+}
+
+.hlogo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.row input {
+  flex: 1 1 130px;
+}
+
+/* Pilihan nominal & metode pembayaran */
+.items,
+.pays {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.item,
+.pay {
+  position: relative;
+  min-height: 64px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--bd);
+  background: var(--bg);
+  text-align: left;
+}
+
+.item small {
+  display: block;
+  color: var(--cy);
+}
+
+.item.on,
+.pay.on {
+  border-color: var(--cy);
+  box-shadow: 0 0 0 2px var(--cy) inset;
+}
+
+/* Label Terlaris / Promo */
+.tag {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  padding: 1px 8px;
+  border-radius: 99px;
+  background: var(--pri);
+  color: #fff;
+  font-size: .65rem;
+}
+
+.tag.Promo {
+  background: var(--bad);
+}
+
+/* Ringkasan pesanan & invoice */
+.sum > div,
+.inv .l {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.tot {
+  margin-top: 6px;
+  padding-top: 8px !important;
+  border-top: 1px dashed var(--bd);
+  font-size: 1.5rem;
+  color: var(--cy);
+}
+
+/* Item keranjang */
+.crt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.crt small {
+  display: block;
+  color: var(--mut);
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty button {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--bd);
+  background: var(--bg);
+}
+
+/* Status transaksi */
+.st {
+  padding: 2px 12px;
+  border-radius: 99px;
+  background: var(--warn);
+  color: #000;
+  font-size: .8rem;
+}
+
+.st.Berhasil {
+  background: var(--ok);
+  color: #fff;
+}
+
+/* Dashboard */
+.stats {
+  display: grid;
+  gap: 12px;
+}
+
+.stats b {
+  display: block;
+  font: 700 1.8rem Rajdhani;
+}
+
+.hist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
+  cursor: pointer;
+}
+
+
+/* ---------- 7. Testimoni, FAQ, footer ---------- */
+.testi {
+  display: grid;
+  gap: 12px;
+}
+
+.testi .card {
+  margin: 0;
+}
+
+.testi q {
+  display: block;
+  margin: 6px 0;
+}
+
+.testi i {
+  color: var(--warn);
+}
+
+/* FAQ accordion */
+.faq button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  border-radius: 12px;
+  border: 1px solid var(--bd);
+  background: var(--card);
+}
+
+.faq p {
+  display: none;
+  padding: 10px 16px;
+  color: var(--mut);
+}
+
+.faq.open p {
+  display: block;
+}
+
+.faq.open i {
+  transform: rotate(180deg);
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  background: var(--card);
+  border-top: 1px solid var(--bd);
+}
+
+.fgrid {
+  display: grid;
+  gap: 18px;
+}
+
+.fgrid p {
+  color: var(--mut);
+}
+
+.soc {
+  display: flex;
+  gap: 14px;
+  font-size: 1.5rem;
+}
+
+.copy {
+  padding: 14px;
+  text-align: center;
+  color: var(--mut);
+  font-size: .8rem;
+}
+
+/* Tombol WhatsApp melayang */
+.wa {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  font-size: 1.9rem;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+}
+
+
+/* ---------- 8. Modal & toast ---------- */
+#modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  background: rgba(0, 0, 10, .7);
+}
+
+.mbox {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+}
+
+.x {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  font-size: 1.2rem;
+}
+
+#modal label {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: .85rem;
+}
+
+/* Input password + tombol show/hide */
+.pw {
+  position: relative;
+  display: block;
+}
+
+.pw button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  background: none;
+}
+
+.err {
+  min-height: 22px;
+  color: var(--bad);
+  font-size: .85rem;
+}
+
+/* Toast notifikasi */
+#toasts {
+  position: fixed;
+  top: 76px;
+  left: 12px;
+  right: 12px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border-left: 4px solid var(--ok);
+  background: var(--card);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .4);
+  animation: in .3s;
+}
+
+.toast.bad {
+  border-color: var(--bad);
+}
+
+@keyframes in {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+
+/* Hormati preferensi pengguna yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ---------- 9. Breakpoint ---------- */
+
+/* >= 480px: ponsel besar */
+@media (min-width: 480px) {
+  .grid  { grid-template-columns: repeat(3, 1fr); }
+  .lbl   { display: inline; }
+  .hero  { height: 260px; }
+  .slide h1 { font-size: 2.6rem; }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .items,
+  .pays  { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* >= 768px: tablet */
+@media (min-width: 768px) {
+  .nav {
+    flex-wrap: nowrap;
+    padding: 10px 24px;
+  }
+
+  .tools {
+    order: 3;
+    margin-left: 0;
+  }
+
+  .search {
+    order: 2;
+    flex: 1;
+    max-width: 340px;
+  }
+
+  #menu {
+    order: 2;
+    flex: none;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  #menu a {
+    padding: 8px 10px;
+    border: 0;
+  }
+
+  .burger { display: none; }
+  .grid   { grid-template-columns: repeat(4, 1fr); }
+  .hero   { height: 340px; }
+
+  .flash {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .testi { grid-template-columns: repeat(3, 1fr); }
+  .fgrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* >= 1024px: desktop */
+@media (min-width: 1024px) {
+  .hero { height: 420px; }
+
+  .det {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: start;
+  }
+
+  .det aside {
+    position: sticky;
+    top: 90px;
+  }
+
+  .fgrid  { grid-template-columns: 2fr 1.5fr 1fr 1.5fr; }
+  .items  { grid-template-columns: repeat(4, 1fr); }
+  .search { max-width: 420px; }
+}
