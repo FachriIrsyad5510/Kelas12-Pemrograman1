@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKULL CRUSH - Metal Concert Tickets</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CDN QRCode.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BACKGROUND KONSER A7X (Diambil dari folder assets/images/) -->
+    <div class="bg-overlay">
+        <img src="assets/images/a7x-concert.jpg" alt="A7X Concert Background" class="bg-concert-img">
+    </div>
+
+    <!-- 1. SECTION LOGIN & REGISTRASI -->
+    <section id="auth-section" class="auth-container">
+        <div class="auth-box">
+            <div class="skull-logo">
+                <span class="skull-icon">☠️</span>
+                <h1 class="brand-title">SKULL CRUSH</h1>
+                <p class="sub-title">HELLFEST TICKET PORTAL</p>
+            </div>
+
+            <!-- Form Login -->
+            <form id="login-form" class="auth-form">
+                <h2>MASUK KE ARENA</h2>
+                <div class="input-group">
+                    <label for="login-email">Email / Username</label>
+                    <input type="email" id="login-email" placeholder="metalhead@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-metal">MASUK NOW ⚡</button>
+                <p class="auth-switch">Belum punya akun? <a href="#" id="show-register">Daftar di sini</a></p>
+            </form>
+
+            <!-- Form Registrasi -->
+            <form id="register-form" class="auth-form hidden">
+                <h2>BUAT AKUN BARU</h2>
+                <div class="input-group">
+                    <label for="reg-name">Nama Lengkap</label>
+                    <input type="text" id="reg-name" placeholder="John Doe" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" placeholder="metalhead@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-metal">DAFTAR AKUN ⚡</button>
+                <p class="auth-switch">Sudah punya akun? <a href="#" id="show-login">Masuk di sini</a></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- 2. SECTION UTAMA (KONSER & TIKET) -->
+    <main id="main-content" class="hidden">
+        <header class="navbar">
+            <div class="nav-brand">
+                <span>☠️</span> SKULL CRUSH '26
+            </div>
+            <div class="user-profile">
+                <span id="user-display-name">Metalhead</span>
+                <button id="btn-logout" class="btn-logout">LOGOUT</button>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <h1 class="hero-title">SKULL CRUSH FESTIVAL 2026</h1>
+            <p class="hero-subtitle">Guncang Jiwamu di Panggung Paling Kelam Tahun Ini!</p>
+            <div class="event-details">
+                <p>📍 <strong>Lokasi:</strong> Stadium Gelora Bung Karno, Jakarta</p>
+                <p>📅 <strong>Tanggal:</strong> 13 Desember 2026</p>
+            </div>
+        </section>
+
+        <!-- Catalog Tiket dengan Visual Ilustrasi Menarik -->
+        <section class="tickets-section">
+            <h2 class="section-title">PILIH KATEGORI TIKET</h2>
+            <div class="ticket-grid">
+
+                <!-- Ticket Card 1: Mosh Pit -->
+                <div class="ticket-card">
+                    <div class="ticket-img-wrapper">
+                        <img src="assets/images/moshpit-zone.jpg" alt="Mosh Pit Area" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60'">
+                    </div>
+                    <div class="card-header">
+                        <h3>MOSH PIT</h3>
+                        <p class="price">Rp 750.000</p>
+                    </div>
+                    <ul class="ticket-features">
+                        <li>🔥 Dekat Panggung Utama</li>
+                        <li>⚡ Akses Pit Area</li>
+                        <li>🍺 Free 1 Drink</li>
+                    </ul>
+                    <button class="btn btn-buy" data-ticket="Mosh Pit" data-price="750000">BELI TIKET</button>
+                </div>
+
+                <!-- Ticket Card 2: VIP Skull Zone -->
+                <div class="ticket-card vip">
+                    <span class="badge">POPULAR</span>
+                    <div class="ticket-img-wrapper">
+                        <img src="assets/images/vip-zone.jpg" alt="VIP Skull Zone" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=500&auto=format&fit=crop&q=60'">
+                    </div>
+                    <div class="card-header">
+                        <h3>VIP SKULL ZONE</h3>
+                        <p class="price">Rp 1.500.000</p>
+                    </div>
+                    <ul class="ticket-features">
+                        <li>💀 Panggung Prioritas Utama</li>
+                        <li>👕 Exclusive Band T-Shirt</li>
+                        <li>🍹 Unlimited Drinks & Snack</li>
+                        <li>🎟️ Fast Track Entrance</li>
+                    </ul>
+                    <button class="btn btn-buy" data-ticket="VIP Skull Zone" data-price="1500000">BELI TIKET</button>
+                </div>
+
+                <!-- Ticket Card 3: Tribune -->
+                <div class="ticket-card">
+                    <div class="ticket-img-wrapper">
+                        <img src="assets/images/tribune-zone.jpg" alt="Tribune Seating" onerror="this.src='https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=500&auto=format&fit=crop&q=60'">
+                    </div>
+                    <div class="card-header">
+                        <h3>TRIBUNE</h3>
+                        <p class="price">Rp 450.000</p>
+                    </div>
+                    <ul class="ticket-features">
+                        <li>🪑 Tempat Duduk Bernomor</li>
+                        <li>👀 Pandangan Luas ke Panggung</li>
+                        <li>🥤 Free Softdrink</li>
+                    </ul>
+                    <button class="btn btn-buy" data-ticket="Tribune" data-price="450000">BELI TIKET</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Konfirmasi & E-Ticket -->
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">KONFIRMASI PEMBELIAN</h2>
+            
+            <div class="modal-body" id="modal-body-content">
+                <p>Kategori: <strong id="modal-ticket-type">-</strong></p>
+                <p>Total Harga: <strong id="modal-ticket-price">-</strong></p>
+                <div class="input-group" id="qty-container">
+                    <label for="ticket-qty">Jumlah Tiket</label>
+                    <input type="number" id="ticket-qty" value="1" min="1" max="5">
+                </div>
+                <button id="btn-confirm-pay" class="btn btn-metal">BAYAR SEKARANG 🔥</button>
+            </div>
+
+            <!-- E-Ticket & QR Code -->
+            <div id="eticket-result" class="hidden" style="text-align: center; margin-top: 15px;">
+                <p style="color: #00ff66; font-weight: bold; margin-bottom: 10px;">✅ PEMBAYARAN BERHASIL!</p>
+                <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 15px;">Scan QR code ini di pintu masuk venue konser.</p>
+                
+                <div id="qrcode" style="display: inline-block; background: white; padding: 10px; border-radius: 4px; margin-bottom: 15px;"></div>
+                
+                <p style="font-size: 0.85rem; color: #888;">ID Tiket: <span id="ticket-id-code" style="color: #ff2a2a; font-weight: bold;">-</span></p>
+                <button id="btn-close-ticket" class="btn btn-metal" style="margin-top: 15px;">SELESAI 🤘</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

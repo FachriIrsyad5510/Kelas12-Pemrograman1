@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu & Pesanan - Kopi Senja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">☕ Kopi Senja</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="menu.html" style="color: #d4a373; font-weight: bold;">Menu & Pesanan</a></li>
+            <li><a href="review.html">Ulasan</a></li>
+            <li><a href="login.html" class="logout-link">Keluar</a></li>
+        </ul>
+    </nav>
+
+    <section class="menu-page">
+        <h2>Daftar Menu Kopi & Cemilan</h2>
+        <p class="subtitle-review">Pilih menu favoritmu dan buat pesanan sekarang!</p>
+
+        <div class="menu-grid">
+            <div class="menu-item-card">
+                <div class="img-placeholder">Kopi 1</div>
+                <h3>Caffe Latte</h3>
+                <p>Espresso dan susu segar lembut.</p>
+                <span class="price">Rp 25.000</span>
+                <div class="card-btn-group">
+                    <button class="btn-sm cart-btn" onclick="addToCart('Caffe Latte', 25000)">+ Keranjang</button>
+                    <button class="btn-sm buy-btn" onclick="buyDirect('Caffe Latte', 25000)">Beli</button>
+                </div>
+            </div>
+
+            <div class="menu-item-card">
+                <div class="img-placeholder">Kopi 2</div>
+                <h3>Americano</h3>
+                <p>Espresso murni dengan air.</p>
+                <span class="price">Rp 20.000</span>
+                <div class="card-btn-group">
+                    <button class="btn-sm cart-btn" onclick="addToCart('Americano', 20000)">+ Keranjang</button>
+                    <button class="btn-sm buy-btn" onclick="buyDirect('Americano', 20000)">Beli</button>
+                </div>
+            </div>
+
+            <div class="menu-item-card">
+                <div class="img-placeholder">Kopi 3</div>
+                <h3>Cappuccino</h3>
+                <p>Kopi susu dengan foam tebal.</p>
+                <span class="price">Rp 28.000</span>
+                <div class="card-btn-group">
+                    <button class="btn-sm cart-btn" onclick="addToCart('Cappuccino', 28000)">+ Keranjang</button>
+                    <button class="btn-sm buy-btn" onclick="buyDirect('Cappuccino', 28000)">Beli</button>
+                </div>
+            </div>
+
+            <div class="menu-item-card">
+                <div class="img-placeholder">Cemilan 1</div>
+                <h3>Croissant Keju</h3>
+                <p>Pastry renyah isi keju leleh.</p>
+                <span class="price">Rp 18.000</span>
+                <div class="card-btn-group">
+                    <button class="btn-sm cart-btn" onclick="addToCart('Croissant Keju', 18000)">+ Keranjang</button>
+                    <button class="btn-sm buy-btn" onclick="buyDirect('Croissant Keju', 18000)">Beli</button>
+                </div>
+            </div>
+
+            <div class="menu-item-card">
+                <div class="img-placeholder">Cemilan 2</div>
+                <h3>French Fries</h3>
+                <p>Kentang goreng gurih renyah.</p>
+                <span class="price">Rp 15.000</span>
+                <div class="card-btn-group">
+                    <button class="btn-sm cart-btn" onclick="addToCart('French Fries', 15000)">+ Keranjang</button>
+                    <button class="btn-sm buy-btn" onclick="buyDirect('French Fries', 15000)">Beli</button>
+                </div>
+            </div>
+
+            <div class="menu-item-card">
+                <div class="img-placeholder">Cemilan 3</div>
+                <h3>Toast Cokelat</h3>
+                <p>Roti panggang selai cokelat.</p>
+                <span class="price">Rp 15.000</span>
+                <div class="card-btn-group">
+                    <button class="btn-sm cart-btn" onclick="addToCart('Toast Cokelat', 15000)">+ Keranjang</button>
+                    <button class="btn-sm buy-btn" onclick="buyDirect('Toast Cokelat', 15000)">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-section">
+            <h3>🛒 Keranjang Belanja Anda</h3>
+            <ul id="cartList" class="cart-list">
+                <li>Keranjang masih kosong.</li>
+            </ul>
+            <div class="cart-total">
+                <strong>Total: <span id="cartTotalPrice">Rp 0</span></strong>
+            </div>
+            <button class="btn" onclick="checkoutCart()" style="margin-top: 15px;">Checkout / Buat Pesanan</button>
+        </div>
+
+        <div id="receiptSection" class="receipt-box" style="display: none;">
+            <h3>📄 Struk Antrian Pesanan</h3>
+            <p>No. Antrian: <strong id="queueNumber">-</strong></p>
+            <hr style="margin: 10px 0; border: 1px dashed #ccc;">
+            <ul id="receiptItemList"></ul>
+            <p style="margin-top: 10px;"><strong>Total Bayar: <span id="receiptTotal">-</span></strong></p>
+            <p style="font-size: 13px; color: #666; margin-top: 5px;">Status: <span id="receiptStatus" style="color: orange; font-weight: bold;">Menunggu Konfirmasi Admin</span></p>
+            
+            <div style="margin-top: 15px; display: flex; gap: 10px;">
+                <button class="btn-cancel" onclick="cancelOrder()">Batalkan Pesanan</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kopi Senja. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

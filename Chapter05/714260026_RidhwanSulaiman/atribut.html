@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontrol Lampu</title>
+</head>
+
+<body>
+    <h2>Apa yang bisa dilakukan oleh JavaScript?</h2>
+    <p>JavaScript bisa mengganti atribut dari value.</p>
+    <p>Studi kasus disini JavaScript merubah nilai dari atribut sebuah gambar bola lampu</p>
+
+    <div style="display: flex; flex-direction: row; align-items: center; margin-top: 50px; gap: 40px;">
+        <button style="margin-top: 190px;" onclick="document.getElementById('myImage').src='pic_bulbon.gif'">
+            Nyalakan Lampunya
+        </button>
+
+        <img id="myImage" src="pic_bulboff.gif" style="width: 100px; display: block; margin: 10px 0;" />
+
+        <button style="margin-top: 190px;" onclick="document.getElementById('myImage').src='pic_bulboff.gif'">
+            Matikan Lampunya
+        </button>
+    </div>
+</body>
+
+</html>
