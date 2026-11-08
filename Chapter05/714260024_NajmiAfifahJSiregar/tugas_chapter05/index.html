@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Senja - Nikmati Senja, Ngopi Santai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">☕ Kopi Senja</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#tentang">About</a></li>
+        <li><a href="#kontak">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="modeBtn" title="Mode Gelap">🌙</button>
+        <span class="cart-icon">🛒 <span id="cartCount">0</span></span>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Nikmati Senja,<br>Ngopi Santai</h1>
+      <p>Kopi artisan khas Bandung, diseduh hangat setiap senja. Temani sore kamu dengan cita rasa kopi premium dan suasana cozy.</p>
+      <div class="hero-btn">
+        <a href="#menu" class="btn-primary">Lihat Menu →</a>
+        <a href="#menu" class="btn-outline">Pesan Sekarang</a>
+      </div>
+      <div class="hero-info">
+        <span>☕ Biji Kopi Lokal</span>
+        <span>🕒 Seduh Fresh Setiap Hari</span>
+        <span>📍 Dago, Bandung</span>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=800&q=80" alt="Latte Art">
+    </div>
+  </section>
+
+  <!-- MENU + CART -->
+  <section id="menu" class="main-layout">
+    <div class="menu-area">
+      <h2>Menu Pilihan</h2>
+      <p class="subtitle">Temukan kopi favoritmu untuk menemani senja</p>
+      <input type="text" id="searchInput" placeholder="🔍 Cari kopi favoritmu...">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="kopi">Kopi</button>
+        <button class="filter-btn" data-filter="nonkopi">Non-Kopi</button>
+        <button class="filter-btn" data-filter="makanan">Camilan</button>
+        <button class="filter-btn" data-filter="best">Best Seller</button>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+
+    <aside class="cart-box">
+      <h3>🛒 Keranjang Belanja (<span id="cartTitleCount">0</span>)</h3>
+      <ul id="cartList"><li class="empty">Belum ada pesanan.</li></ul>
+      <div class="cart-total">
+        <span>Subtotal</span><b>Rp <span id="totalHarga">0</span></b>
+      </div>
+      <button id="checkoutBtn" class="btn-primary full">Checkout Sekarang 🔒</button>
+      <p id="checkoutMsg"></p>
+      <p class="note">Gratis ongkir untuk pesanan di atas Rp 50.000</p>
+    </aside>
+  </section>
+
+  <section id="tentang" class="about">
+    <h2>Tentang Kopi Senja</h2>
+    <p>Kami pakai biji kopi lokal dari Pangalengan, Bandung. Rating pengunjung: <b>4.8 / 5.0 ⭐</b></p>
+  </section>
+
+  <footer id="kontak">
+    <p>© 2026 Kopi Senja • Jl. Dago No. 88, Bandung • Buka setiap hari 08.00 - 22.00</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>`
