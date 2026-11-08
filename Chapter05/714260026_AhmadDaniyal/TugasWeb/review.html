@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulasan Pelanggan - Kopi Senja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">☕ Kopi Senja</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="menu.html">Menu & Pesanan</a></li>
+            <li><a href="review.html" style="color: #d4a373; font-weight: bold;">Ulasan</a></li>
+            <li><a href="login.html" class="logout-link">Keluar</a></li>
+        </ul>
+    </nav>
+
+    <section class="review-section">
+        <h2>Apa Kata Mereka Tentang Kopi Senja?</h2>
+        <p class="subtitle-review">Pendapat dari para penikmat kopi setia kami.</p>
+
+        <div class="review-container" id="reviewContainer">
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Tempatnya sangat cozy buat ngerjain tugas atau ngobrol santai. Caffe Latte-nya juara banget!"</p>
+                <span class="reviewer-name">- Rina Marlina</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Croissant keju pas masih hangat enak banget dimakan bareng Americano. Recommended!"</p>
+                <span class="reviewer-name">- Budi Santoso</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐☆</div>
+                <p class="review-text">"Suasana malamnya enak, lampunya syahdu. Pelayanan baristanya juga ramah."</p>
+                <span class="reviewer-name">- Dinda Putri</span>
+            </div>
+        </div>
+>
+        <div class="review-form-box">
+            <h3>Bagikan Pengalaman Anda</h3>
+            <form id="reviewForm">
+                <div class="input-group">
+                    <label>Nama Anda</label>
+                    <input type="text" id="reviewerName" placeholder="Masukkan nama" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Rating</label>
+                    <select id="reviewRating" required>
+                        <option value="⭐⭐⭐⭐⭐">5 Bintang - Sangat Memuaskan</option>
+                        <option value="⭐⭐⭐⭐☆">4 Bintang - Bagus</option>
+                        <option value="⭐⭐⭐☆☆">3 Bintang - Cukup</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Ulasan / Komentar</label>
+                    <textarea id="reviewComment" rows="4" placeholder="Tulis kesan Anda di sini..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Kirim Ulasan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kopi Senja. Hak Cipta Dilindungi.</p>
+        <p>Lokasi: Jl. Cimahi No. 123, Jawa Barat</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
