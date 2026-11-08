@@ -3,11 +3,11 @@ const profileDefaults = {
     role: 'Pelajar · Calon Web Developer',
     location: 'Indonesia',
     birthday: '',
-    email: 'jesardianmuhammad@gmail.com',
-    instagram: 'jesardm_',
+    email: '',
+    instagram: '',
     about: 'Saya sedang belajar membangun hal-hal menarik di dunia web. Halaman ini adalah ruang kecil untuk berbagi cerita, informasi, dan hal yang sedang saya tekuni.',
     skills: ['HTML', 'CSS', 'JavaScript', 'UI Design'],
-    photo: 'assets/profile.jpg'
+    photo: ''
 };
 
 const profileStorageKey = 'ruang-pribadi-profile';
@@ -99,10 +99,9 @@ function loadProfile() {
             skills: Array.isArray(parsedProfile.skills)
                 ? parsedProfile.skills.filter((skill) => typeof skill === 'string').slice(0, 8)
                 : profileDefaults.skills,
-            photo: typeof parsedProfile.photo === 'string'
-                && (parsedProfile.photo.startsWith('data:image/jpeg;base64,') || parsedProfile.photo === profileDefaults.photo)
+            photo: typeof parsedProfile.photo === 'string' && parsedProfile.photo.startsWith('data:image/jpeg;base64,')
                 ? parsedProfile.photo
-                : profileDefaults.photo,
+                : '',
             instagram: typeof parsedProfile.instagram === 'string'
                 && /^@?[A-Za-z0-9._]{1,30}$/.test(parsedProfile.instagram)
                 ? parsedProfile.instagram.replace(/^@/, '')
