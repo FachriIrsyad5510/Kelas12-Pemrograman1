@@ -53,4 +53,3 @@ to get ssh key in your computer, and put in your github or gitlab ssh key settin
 cat ~/.ssh/id_rsa.pub
 ```
 if there is no key appears, plese generate the key also set global config of git in next section and please add the public key to your github profile.
-

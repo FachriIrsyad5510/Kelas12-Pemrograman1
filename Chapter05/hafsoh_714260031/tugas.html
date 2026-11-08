@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daftar Tugas Sekolah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- ===== HTML: bagian KERANGKA / ISI ===== -->
+<main class="app">
+  <h1>List Tugas</h1>
+  <p class="sub">Catat tugas, centang kalau sudah selesai.</p>
+
+  <!-- Form input -->
+  <section class="kartu">
+    <div class="form">
+      <input type="text" id="inputTugas" placeholder="Contoh: Kerjakan quis CSS" maxlength="80">
+      <select id="pilihPrioritas" aria-label="Prioritas">
+        <option>Rendah</option>
+        <option selected>Sedang</option>
+        <option>Tinggi</option>
+      </select>
+      <button class="btn" id="tombolTambah">Tambah tugas</button>
+    </div>
+  </section>
+
+  <!-- Progress + daftar -->
+  <section class="kartu">
+    <div class="info"><span id="teksProgress">0 dari 0 selesai</span><span id="persen">0%</span></div>
+    <div class="bar"><div class="isi" id="isiBar"></div></div>
+
+    <div class="filter" id="filter">
+      <button data-f="semua" class="aktif">Semua</button>
+      <button data-f="aktif">Belum</button>
+      <button data-f="selesai">Selesai</button>
+    </div>
+
+    <ul id="daftar"></ul>
+    <div class="bawah"><button class="link" id="hapusSelesai">Hapus yang selesai</button></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
