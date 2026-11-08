@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk | Portofolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login" class="auth-body">
+  <section class="auth-card glass">
+    <h1>Selamat datang kembali</h1>
+    <p class="muted">Masuk untuk melihat portofolio.</p>
+    <form id="loginForm" novalidate>
+      <label>Email atau username<input id="id" autocomplete="username" placeholder="nama@email.com"></label>
+      <label>Kata sandi<input id="password" type="password" autocomplete="current-password" placeholder="Minimal 6 karakter"></label>
+      <p id="pesan" class="pesan" role="alert"></p>
+      <button class="btn btn-primary" type="submit">Masuk</button>
+    </form>
+    <p class="muted center">Belum punya akun? <a href="register.html">Daftar</a></p>
+  </section>
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

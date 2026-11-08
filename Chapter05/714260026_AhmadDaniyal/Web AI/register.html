@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar | Portofolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register" class="auth-body">
+  <section class="auth-card glass">
+    <h1>Buat akun baru</h1>
+    <p class="muted">Cukup satu menit.</p>
+    <form id="registerForm" novalidate>
+      <label>Nama lengkap<input id="nama" autocomplete="name" placeholder="Nama kamu"></label>
+      <label>Email<input id="email" type="email" autocomplete="email" placeholder="nama@email.com"></label>
+      <label>Kata sandi<input id="password" type="password" autocomplete="new-password" placeholder="Minimal 6 karakter"></label>
+      <label>Ulangi kata sandi<input id="konfirmasi" type="password" autocomplete="new-password"></label>
+      <p id="pesan" class="pesan" role="alert"></p>
+      <button class="btn btn-primary" type="submit">Buat akun</button>
+    </form>
+    <p class="muted center">Sudah punya akun? <a href="login.html">Masuk</a></p>
+  </section>
+  <script src="js/auth.js"></script>
+</body>
+</html>
