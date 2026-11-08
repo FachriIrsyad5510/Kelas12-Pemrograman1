@@ -177,6 +177,7 @@ function setAuthMode(mode) {
   state.authMode = mode;
   const isRegistering = mode === "register";
   document.getElementById("loginTabs").classList.toggle("hidden", isRegistering);
+  document.getElementById("authSwitch").classList.toggle("hidden", state.role !== "customer");
   document.getElementById("registerNameLabel").classList.toggle("hidden", !isRegistering);
   document.getElementById("registerName").classList.toggle("hidden", !isRegistering);
   document.getElementById("registerName").required = isRegistering;
