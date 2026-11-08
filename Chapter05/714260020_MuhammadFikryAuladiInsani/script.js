@@ -34,6 +34,7 @@ const reviews = [
 
 const state = {
   role: "customer",
+  authMode: "login",
   user: readStoredUser(),
   cart: readStoredCart(),
   reviewIndex: 0,
@@ -103,7 +104,7 @@ function updateUserInterface() {
   loginButton.classList.toggle("hidden", isLoggedIn);
   userChip.classList.toggle("hidden", !isLoggedIn);
   document.getElementById("userGreeting").textContent = isLoggedIn
-    ? `${state.user.role === "admin" ? "Admin" : "Ciao"}, ${state.user.email.split("@")[0]}`
+    ? `${state.user.role === "admin" ? "Admin" : "Ciao"}, ${state.user.name || state.user.email.split("@")[0]}`
     : "";
   document.getElementById("discountNote").classList.toggle("hidden", !isBuyer());
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -159,6 +160,7 @@ function addToCart(id) {
 
 function setRole(role) {
   state.role = role;
+  setAuthMode("login");
   document.querySelectorAll(".login-tab").forEach((tab) => {
     const active = tab.dataset.role === role;
     tab.classList.toggle("active", active);
@@ -168,6 +170,37 @@ function setRole(role) {
     ? "Masuk sebagai pembeli untuk mendapat diskon 10%."
     : "Akses khusus tim Luna Vesta.";
   document.getElementById("loginPassword").value = "";
+  document.getElementById("formError").textContent = "";
+}
+
+function setAuthMode(mode) {
+  state.authMode = mode;
+  const isRegistering = mode === "register";
+  document.getElementById("loginTabs").classList.toggle("hidden", isRegistering);
+  document.getElementById("authSwitch").classList.toggle("hidden", state.role !== "customer");
+  document.getElementById("registerNameLabel").classList.toggle("hidden", !isRegistering);
+  document.getElementById("registerName").classList.toggle("hidden", !isRegistering);
+  document.getElementById("registerName").required = isRegistering;
+  document.getElementById("modalTitle").innerHTML = isRegistering
+    ? "Mulai jadi <em>member.</em>"
+    : "Senang bertemu <em>lagi.</em>";
+  document.getElementById("loginHint").textContent = isRegistering
+    ? "Daftar gratis dan nikmati diskon 10% untuk pesananmu."
+    : state.role === "customer"
+      ? "Masuk sebagai pembeli untuk mendapat diskon 10%."
+      : "Akses khusus tim Luna Vesta.";
+  document.getElementById("authSubmit").innerHTML = isRegistering
+    ? "Daftar jadi member <span aria-hidden=\"true\">→</span>"
+    : "Masuk ke Luna Vesta <span aria-hidden=\"true\">→</span>";
+  document.getElementById("authSwitchText").textContent = isRegistering
+    ? "Sudah menjadi member?"
+    : "Belum menjadi member?";
+  document.getElementById("authSwitchButton").textContent = isRegistering
+    ? "Masuk"
+    : "Daftar di sini";
+  document.getElementById("demoNote").textContent = isRegistering
+    ? "Mode demo: pendaftaran mengaktifkan sesi member di browser ini. Tidak ada kata sandi yang disimpan."
+    : "Mode demo: login pembeli dapat menggunakan email dan kata sandi apa saja. Admin: admin@lunavesta.id / luna123";
   document.getElementById("formError").textContent = "";
 }
 
@@ -213,7 +246,19 @@ document.querySelectorAll(".login-tab").forEach((tab) => {
   tab.addEventListener("click", () => setRole(tab.dataset.role));
 });
 
-loginButton.addEventListener("click", () => openModal(loginModal));
+loginButton.addEventListener("click", () => {
+  setRole("customer");
+  openModal(loginModal);
+});
+document.getElementById("memberRegisterButton").addEventListener("click", () => {
+  setRole("customer");
+  setAuthMode("register");
+  openModal(loginModal);
+  document.getElementById("registerName").focus();
+});
+document.getElementById("authSwitchButton").addEventListener("click", () => {
+  setAuthMode(state.authMode === "register" ? "login" : "register");
+});
 document.getElementById("modalClose").addEventListener("click", () => closeModal(loginModal));
 document.getElementById("logoutButton").addEventListener("click", () => {
   state.user = null;
@@ -227,6 +272,22 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
   const email = document.getElementById("loginEmail").value.trim().toLowerCase();
   const password = document.getElementById("loginPassword").value;
   const formError = document.getElementById("formError");
+
+  if (state.authMode === "register") {
+    const name = document.getElementById("registerName").value.trim();
+    if (name.length < 2) {
+      formError.textContent = "Nama harus terdiri dari minimal 2 karakter.";
+      return;
+    }
+    state.user = { role: "customer", email, name, member: true };
+    persist("lunaVestaUser", state.user);
+    updateUserInterface();
+    closeModal(loginModal);
+    document.getElementById("loginForm").reset();
+    setAuthMode("login");
+    showToast("Benvenuto! Kamu resmi menjadi member Luna Vesta. Diskon 10% aktif.");
+    return;
+  }
 
   if (state.role === "admin" && (email !== "admin@lunavesta.id" || password !== "luna123")) {
     formError.textContent = "Email atau kata sandi admin tidak cocok.";
