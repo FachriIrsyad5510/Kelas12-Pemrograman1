@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dyl Store - Top Up Game Murah & Cepat</title>
+<!-- Ikon website -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="nav">
+  <a class="logo" href="#" onclick="go('home');return false"><i class="fa-solid fa-gamepad"></i> Dyl<span>Store</span></a>
+  <div class="tools">
+    <button class="ic" id="theme" aria-label="Ganti tema"><i class="fa-solid fa-moon"></i></button>
+    <button class="ic" onclick="go('cart')" aria-label="Keranjang"><i class="fa-solid fa-cart-shopping"></i><b class="badge" id="badge">0</b></button>
+    <button class="btn sm" id="auth"></button>
+    <button class="ic burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <label class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="q" placeholder="Cari game..." autocomplete="off"></label>
+  <nav id="menu">
+    <a href="#" onclick="go('home');return false">Beranda</a>
+    <a href="#" onclick="jump('flash');return false">Flash Sale</a>
+    <a href="#" onclick="go('track');return false">Cek Pesanan</a>
+    <a href="#" onclick="jump('faq');return false">FAQ</a>
+  </nav>
+</header>
+
+<main>
+  <!-- BERANDA -->
+  <section id="v-home" class="view">
+    <div class="hero" id="hero"></div>
+    <section class="wrap flash" id="flash">
+      <div><h2><i class="fa-solid fa-bolt"></i> Flash Sale</h2><p>Pakai kode <b>FLASH10</b> untuk diskon 10% semua game.</p></div>
+      <div class="cd" id="cd">00:00:00</div>
+    </section>
+    <section class="wrap" id="games">
+      <h2>Pilih Game & Produk</h2>
+      <div class="chips" id="chips"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+    <section class="wrap"><h2>Kata Pembeli</h2><div class="testi" id="tl"></div></section>
+    <section class="wrap" id="faq"><h2>Pertanyaan Umum</h2><div id="fl"></div></section>
+  </section>
+
+  <!-- Halaman lain dirender oleh script.js -->
+  <section id="v-detail" class="view wrap" hidden></section>
+  <section id="v-cart" class="view wrap" hidden></section>
+  <section id="v-pay" class="view wrap" hidden></section>
+  <section id="v-track" class="view wrap" hidden></section>
+  <section id="v-dash" class="view wrap" hidden></section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap fgrid">
+    <div><h3>Dyl Store</h3><p>Top up game dan voucher digital, otomatis dan tanpa ribet. Buka 24 jam.</p></div>
+    <div><h3>Kontak</h3><p><i class="fa-solid fa-envelope"></i> cs@dylstore.id<br><i class="fa-brands fa-whatsapp"></i> 0813-1892-5199</p></div>
+    <div><h3>Sosial Media</h3><p class="soc"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></p></div>
+    <div><h3>Pembayaran</h3><p>QRIS · DANA · OVO · GoPay · ShopeePay · Transfer Bank</p></div>
+  </div>
+  <p class="copy">© 2026 Dyl Store. Proyek demo, tidak ada transaksi nyata.</p>
+</footer>
+
+<a class="wa" href="https://wa.me/6281318925199?text=Halo%20Dyl%20Store%2C%20saya%20mau%20tanya%20soal%20top%20up" target="_blank" rel="noopener" aria-label="WhatsApp CS"><i class="fa-brands fa-whatsapp"></i></a>
+<div id="toasts" aria-live="polite"></div>
+<div id="modal" hidden><div class="mbox card"><button class="x" onclick="$('#modal').hidden=true" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button><div id="modal-body"></div></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>

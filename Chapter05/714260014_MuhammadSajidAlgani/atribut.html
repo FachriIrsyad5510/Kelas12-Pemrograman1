@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Lampu?</h2>
+
+<p>Untuk mengontrol lampu, kita bisa menggunakan JavaScript untuk mengubah nilai atribut src dari gambar.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+
+<button
+  onclick="document.getElementById('myImage').src='aset/pic_bulbon.gif'"
+>
+  Nyalakan Lampunya
+</button>
+<img id="myImage" src="aset/pic_bulboff.gif" style="width: 200px " />
+<button
+  onclick="document.getElementById('myImage').src='aset/pic_bulboff.gif'"
+>
+  Matikan Lampunya
+</button>
