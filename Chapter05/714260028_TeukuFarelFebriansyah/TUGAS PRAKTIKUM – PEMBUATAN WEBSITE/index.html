@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAMBA FASHION BDG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+  <!-- NAVIGASI UTAMA -->
+  <header>
+    <div class="logo">
+      <img src="assets/logo.jfif" alt="Logo Mamba Fashion" class="logo-img">
+      <span>MAMBA.BDG</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" id="navHome" class="active-nav">Home</a></li>
+        <li><a href="#" id="navProducts">Katalog</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button id="themeToggleBtn">Light Mode</button>
+      <button id="openAuthBtn" class="btn-auth">Login</button>
+      <span id="userStatus"></span>
+      <button id="logoutBtn" class="btn-auth hidden" style="background-color: #555;">Logout</button>
+      <div class="cart-icon">🛒 <span id="cartCount">0</span></div>
+    </div>
+  </header>
+
+  <!-- 1. HALAMAN HOME (VERSI LENGKAP & BERISI) -->
+  <section id="homeSection">
+    
+    <!-- Hero Banner Utama -->
+    <div class="hero">
+      <h1>MAMBA FASHION BDG</h1>
+      <p>Minimalist & Dark Streetwear Outfit for Men</p>
+      <div class="promo-tag">🔥 DISKON 20% KHUSUS MINGGU INI 🔥</div>
+    </div>
+
+    <div class="container">
+      
+      <!-- Quick Categories -->
+      <h3 class="section-title">Kategori Pilihan</h3>
+      <div class="home-categories">
+        <div class="cat-card">
+          <span>👕</span>
+          <h4>Kaos Oversized</h4>
+          <p>Bahan 100% Heavy Cotton 24s</p>
+        </div>
+        <div class="cat-card">
+          <span>🧥</span>
+          <h4>Jaket & Outerwear</h4>
+          <p>Style Dark Leather & Wash Hoodie</p>
+        </div>
+        <div class="cat-card">
+          <span>👖</span>
+          <h4>Celana & Cargo</h4>
+          <p>Fitment Unisex Loose & Relaxed</p>
+        </div>
+      </div>
+
+      <!-- Highlight Best Seller -->
+      <h3 class="section-title">Produk Terlaris Minggu Ini</h3>
+      <div class="best-sellers">
+        <div class="product-card">
+          <img src="assets/kaos1.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Oversized Tee">
+          <h3>Oversized Tee - MAMBA VOID 01</h3>
+          <p class="price">Rp 120.000</p>
+        </div>
+        <div class="product-card">
+          <img src="assets/jaket1.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Leather Jacket">
+          <h3>Mamba Leather Jacket - SHADOW RIDER</h3>
+          <p class="price">Rp 350.000</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">Apa Kata Mereka?</h3>
+      <div class="testimonials">
+        <div class="testi-card">
+          <p>"Bahan kaosnya tebel banget parah 24s murni, potongannya oversized pas di badan. Next order jaketnya!"</p>
+          <small>— Farel, Bandung</small>
+        </div>
+        <div class="testi-card">
+          <p>"Pengiriman ke Soreang gercep cuma sehari nyampe. Packingan rapi dapet stiker mamba."</p>
+          <small>— Rizky, Kabupaten Bandung</small>
+        </div>
+      </div>
+
+      <div class="features-box" style="margin-top: 40px;">
+        <div>Pengiriman Area Bandung</div>
+        <div>100% Original High Quality Denim & Cotton</div>
+        <div>Garansi Retur 7 Hari</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. HALAMAN KATALOG -->
+  <section id="productsSection" class="container hidden">
+    <h2>Katalog Pakaian</h2>
+
+    <!-- FILTER KATEGORI -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">Semua</button>
+      <button class="filter-btn" data-category="kaos">Kaos</button>
+      <button class="filter-btn" data-category="jaket">Jaket / Hoodie</button>
+      <button class="filter-btn" data-category="celana">Celana</button>
+    </div>
+
+    <div class="product-grid">
+      <!-- Ini Kaos -->
+      <div class="product-card" data-category="kaos">
+        <img src="assets/kaos1.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Kaos 1">
+        <h3>Oversized Tee - MAMBA VOID 01</h3>
+        <p class="price">Rp 120.000</p>
+        <button class="add-to-cart" data-price="120000">Tambah Keranjang</button>
+      </div>  
+
+      <div class="product-card" data-category="kaos">
+        <img src="assets/kaos2.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Kaos 2">
+        <h3>Acid Wash Shirt - DARK DISTORTION</h3>
+        <p class="price">Rp 120.000</p>
+        <button class="add-to-cart" data-price="120000">Tambah Keranjang</button> 
+      </div>
+
+      <div class="product-card" data-category="kaos">
+        <img src="assets/kaos3.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Kaos 3">
+        <h3>Graphic Tee Black - NOCTURNAL BDG</h3>
+        <p class="price">Rp 120.000</p>
+        <button class="add-to-cart" data-price="120000">Tambah Keranjang</button>
+      </div>
+
+      <!-- Ini Jaket -->
+      <div class="product-card" data-category="jaket">
+        <img src="assets/jaket1.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Jaket 1">
+        <h3>Mamba Leather Jacket - SHADOW RIDER</h3>
+        <p class="price">Rp 350.000</p>
+        <button class="add-to-cart" data-price="350000">Tambah Keranjang</button>
+      </div>
+
+      <div class="product-card" data-category="jaket">
+        <img src="assets/jaket2.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Jaket 2">
+        <h3>Hoodie - BLACKOUT 500GSM</h3>
+        <p class="price">Rp 350.000</p>
+        <button class="add-to-cart" data-price="350000">Tambah Keranjang</button>
+      </div>
+        
+      <div class="product-card" data-category="jaket">
+        <img src="assets/jaket3.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Jaket 3">
+        <h3>Denim Jacket - DARK WASH EVEREST</h3>
+        <p class="price">Rp 350.000</p>
+        <button class="add-to-cart" data-price="350000">Tambah Keranjang</button>
+      </div>
+
+      <!-- Ini Celana -->
+      <div class="product-card" data-category="celana">
+        <img src="assets/celana1.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Celana 1">
+        <h3>Cargo Pants Dark Grey - TACTICAL URBAN</h3>
+        <p class="price">Rp 210.000</p>
+        <button class="add-to-cart" data-price="210000">Tambah Keranjang</button>
+      </div>
+
+      <div class="product-card" data-category="celana">
+        <img src="assets/celana2.jfif" class="product-img-file" style="width: 100%; height: auto; border-radius: 8px;" alt="Celana 2">
+        <h3>Fit Denim - MAMBA RAW BLACK</h3>
+        <p class="price">Rp 210.000</p>
+        <button class="add-to-cart" data-price="210000">Tambah Keranjang</button>
+      </div>
+
+      <div class="product-card" data-category="celana">
+        <img src="assets/celana3.jfif" class="product-img-file" style="width: 100%; height: 287px; border-radius: 8px;" alt="Celana 3">
+        <h3>Denim Straight Fit - RAW FLEX</h3>
+        <p class="price">Rp 210.000</p>
+        <button class="add-to-cart" data-price="210000">Tambah Keranjang</button>
+      </div>    
+    </div>
+
+    <!-- SUMMARY BELANJA & TOMBOL CHECKOUT -->
+    <div class="cart-summary">
+      <span>Total Estimasi Belanja: <strong id="totalPrice">Rp 0</strong></span>
+      <button id="checkoutBtn" class="btn-main" style="margin-left: 15px;">Checkout Sekarang 🛍️</button>
+    </div>
+  </section>
+
+  <!-- MODAL POP-UP CHECKOUT / NOTA PEMBAYARAN -->
+  <div id="checkoutModal" class="modal">
+    <div class="modal-content">
+      <span id="closeCheckoutBtn" class="close-btn">&times;</span>
+      <h3>Nota Pembayaran MAMBA.BDG</h3>
+      <hr style="border-color: #444; margin: 10px 0;">
+      
+      <div style="margin: 15px 0; line-height: 1.8;">
+        <p><strong>Pembeli:</strong> <span id="checkoutUser">-</span></p>
+        <p><strong>Total Items:</strong> <span id="checkoutItems">0</span> barang</p>
+        <p><strong>Total Tagihan:</strong> <strong id="checkoutTotal" style="color: #e63946;">Rp 0</strong></p>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label for="paymentMethod" style="display: block; margin-bottom: 5px; font-weight: bold;">Metode Pembayaran:</label>
+        <select id="paymentMethod" style="width: 100%; padding: 8px; background: transparent; color: inherit; border: 1px solid #444; border-radius: 4px;">
+          <option value="QRIS" style="color: black;">QRIS (Gopay/OVO/Dana/BCA)</option>
+          <option value="Transfer Bank" style="color: black;">Transfer Bank BCA/Mandiri</option>
+          <option value="COD" style="color: black;">COD (Bayar di Tempat - Khusus Bandung)</option>
+        </select>
+      </div>
+
+      <button id="confirmOrderBtn" class="btn-main" style="width: 100%;">Konfirmasi & Bayar</button>
+    </div>
+  </div>
+
+  <!-- MODAL POP-UP LOGIN & REGISTER -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close-btn">&times;</span>
+      <div class="tab-header">
+        <button id="tabLoginBtn" class="tab-btn active">Login</button>
+        <button id="tabRegisterBtn" class="tab-btn">Register</button>
+      </div>
+
+      <!-- FORM LOGIN -->
+      <form id="loginForm" class="auth-form">
+        <h3>Login Account</h3>
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit" class="btn-main">Masuk</button>
+      </form>
+
+      <!-- FORM REGISTER -->
+      <form id="registerForm" class="auth-form hidden">
+        <h3>Daftar Akun Baru</h3>
+        <input type="text" id="regUsername" placeholder="Username Baru" required>
+        <input type="password" id="regPassword" placeholder="Password Baru" required>
+        <button type="submit" class="btn-main">Daftar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p><a href="https://www.instagram.com/teukuufarelll_" target="_blank" style="color: #e63946; text-decoration: none;">Follow Instagram mamba.bdg</a></p>   
+    <p style="margin-top: 10px;">&copy; 2026 MAMBA FASHION BDG. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
