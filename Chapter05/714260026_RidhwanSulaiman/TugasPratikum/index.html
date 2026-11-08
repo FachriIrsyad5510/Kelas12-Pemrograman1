@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Kelas 12 D4</title>
+  <meta name="description" content="Portofolio Kelas 12 D4: profil kelas, hasil karya, dan kegiatan bersama." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Tailwind CSS v4 via CDN: tidak perlu npm/npx/build -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    /* Token desain (pengganti :root di CSS lama) */
+    @theme {
+      --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+      --color-accent: #f7b56d;
+      --color-card: rgb(2 8 20 / 0.26);
+      --color-soft: rgb(255 255 255 / 0.14);
+      --color-muted: rgb(255 255 255 / 0.78);
+    }
+
+    @layer base {
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background: #0e1d2b;
+        color: #f1f6ff;
+        overflow-x: hidden;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* Kunci scroll selama loading */
+      body.is-loading {
+        overflow: hidden;
+      }
+
+      section[id] {
+        scroll-margin-top: 90px;
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 4px;
+        border-radius: 6px;
+      }
+
+      @media (max-width: 760px) {
+        section[id] {
+          scroll-margin-top: 20px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .page-bg {
+          background-position: center top;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    }
+
+    /* Latar tetap di belakang seluruh halaman */
+    @layer components {
+      .page-bg {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(180deg, rgba(11, 20, 29, 0.25), rgba(10, 14, 18, 0.75)),
+          url("assets/univitas.png") center / cover no-repeat,
+          linear-gradient(180deg, #0e1d2b 0%, #203e56 55%, #ffbb6d 100%);
+      }
+
+      /* Kartu kaca yang dipakai anggota & karya */
+      .glass {
+        background: var(--color-card);
+        border: 1px solid var(--color-soft);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+    }
+  </style>
+
+  <!-- Style khusus loading screen -->
+  <style>
+    /* ===== Loading Screen ===== */
+    .loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(32, 62, 86, 0.9), rgba(10, 14, 18, 0.98) 70%),
+        #0e1d2b;
+      /* Animasi utama: tertarik ke atas */
+      transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.6s ease 0.4s;
+      will-change: transform, opacity;
+    }
+
+    /* Kelas pemicu: layar naik ke atas lalu hilang */
+    .loading-screen.is-hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loading-photo {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      padding: 4px;
+      background: conic-gradient(from 0deg, #f7b56d, #ffffff, #f7b56d);
+      animation: spin-ring 3s linear infinite;
+    }
+
+    .loading-photo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      animation: counter-spin 3s linear infinite;
+      background: #1a2a3a;
+    }
+
+    /* Fallback inisial bila foto tidak ada */
+    .loading-photo .fallback {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #203e56;
+      color: #f7b56d;
+      font-weight: 800;
+      font-size: 2rem;
+      animation: counter-spin 3s linear infinite;
+    }
+
+    @keyframes spin-ring {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes counter-spin {
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .loading-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #f1f6ff;
+      text-align: center;
+      padding: 0 1rem;
+      opacity: 0;
+      animation: fade-up 1s ease 0.3s forwards;
+    }
+
+    .loading-text span {
+      color: #f7b56d;
+    }
+
+    .loading-bar {
+      width: 160px;
+      height: 4px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+    }
+
+    .loading-bar::after {
+      content: "";
+      display: block;
+      width: 40%;
+      height: 100%;
+      border-radius: 99px;
+      background: #f7b56d;
+      animation: load-bar 1.4s ease-in-out infinite;
+    }
+
+    @keyframes load-bar {
+      0% {
+        transform: translateX(-120%);
+      }
+
+      100% {
+        transform: translateX(320%);
+      }
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hormati preferensi kurangi gerak */
+    @media (prefers-reduced-motion: reduce) {
+      .loading-screen {
+        transition: opacity 0.4s ease;
+      }
+
+      .loading-screen.is-hidden {
+        transform: none;
+      }
+    }
+  </style>
+
+  <!-- Scrollbar sederhana: track putih transparan abu-abu buram -->
+  <style>
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 99px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(180, 180, 180, 0.45);
+      border-radius: 99px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(200, 200, 200, 0.65);
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(180, 180, 180, 0.45) rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+
+<body class="is-loading">
+  <!-- ===== Loading Screen ===== -->
+  <div id="loading-screen" class="loading-screen" role="status" aria-live="polite" aria-label="Memuat portofolio">
+    <div class="loading-photo">
+      <img src="assets/kami.png" alt="Foto kelas 12 D4" loading="eager" fetchpriority="high" decoding="async"
+        onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'fallback\'>12 D4</div>';" />
+    </div>
+    <p class="loading-text">Besama<span> Kami</span> Kita jaga Lingkungan</p>
+    <div class="loading-bar" aria-hidden="true"></div>
+  </div>
+
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <div class="min-h-dvh px-4 pt-[18px] pb-10 min-[760px]:px-6">
+    <!-- Topbar -->
+    <header
+      class="static z-10 mx-auto flex w-[min(1400px,100%)] flex-wrap items-center justify-center gap-3 pt-2.5 pb-[18px] min-[760px]:sticky min-[760px]:top-0 min-[760px]:justify-between">
+      <a class="flex h-[52px] w-[120px] items-center justify-center rounded-full bg-white/90 shadow-[0_8px_18px_rgba(0,0,0,0.15)]"
+        href="#home" aria-label="Kembali ke beranda">
+        <span class="text-[1.4rem] font-extrabold tracking-[-0.04em] text-gray-900">12 D4</span>
+      </a>
+
+      <nav
+        class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-full bg-black/25 px-4 py-2.5 backdrop-blur-md min-[400px]:px-5 min-[760px]:gap-x-[34px] min-[760px]:px-6 min-[760px]:py-3"
+        aria-label="Navigasi utama">
+        <a href="#home" aria-current="page"
+          class="border-b-2 border-transparent pb-1 text-[0.72rem] font-semibold tracking-[0.08em] text-white/90 min-[400px]:text-[0.8rem] min-[400px]:tracking-[0.12em] transition hover:border-accent hover:text-white aria-[current=page]:border-accent aria-[current=page]:text-white">HOME</a>
+        <a href="#about"
+          class="border-b-2 border-transparent pb-1 text-[0.72rem] font-semibold tracking-[0.08em] text-white/90 min-[400px]:text-[0.8rem] min-[400px]:tracking-[0.12em] transition hover:border-accent hover:text-white aria-[current=page]:border-accent aria-[current=page]:text-white">ABOUT</a>
+        <a href="#karya"
+          class="border-b-2 border-transparent pb-1 text-[0.72rem] font-semibold tracking-[0.08em] text-white/90 min-[400px]:text-[0.8rem] min-[400px]:tracking-[0.12em] transition hover:border-accent hover:text-white aria-[current=page]:border-accent aria-[current=page]:text-white">KARYA</a>
+        <a href="#events"
+          class="border-b-2 border-transparent pb-1 text-[0.72rem] font-semibold tracking-[0.08em] text-white/90 min-[400px]:text-[0.8rem] min-[400px]:tracking-[0.12em] transition hover:border-accent hover:text-white aria-[current=page]:border-accent aria-[current=page]:text-white">EVENTS</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="home"
+        class="mx-auto flex w-[min(1400px,100%)] items-center pt-6 min-[1100px]:min-h-[calc(100vh-110px)] min-[1100px]:pt-0">
+        <div
+          class="grid w-full grid-cols-1 items-center gap-8 min-[1100px]:grid-cols-[minmax(260px,1fr)_minmax(320px,1.1fr)] min-[1100px]:gap-14">
+          <aside class="text-center min-[1100px]:pl-3 min-[1100px]:text-left">
+            <div class="mb-[18px] text-[0.72rem] font-semibold tracking-[0.12em] text-white/80">PORTOFOLIO KELAS</div>
+            <h1
+              class="mb-[22px] text-[clamp(2.2rem,8vw,3.2rem)] leading-[0.95] min-[1100px]:text-[clamp(2.8rem,4vw,5rem)] font-bold tracking-[-0.05em]">
+              D4 Teknik Informatika Kelas 12
+            </h1>
+            <p class="mx-auto mb-7 max-w-[360px] text-[0.95rem] leading-[1.8] text-muted min-[1100px]:mx-0">
+              Kami adalah kelas yang belajar, berkolaborasi, dan berkarya bersama.
+              Website ini merangkum perjalanan, karya, dan kenangan kami.
+            </p>
+            <a href="#about"
+              class="inline-block rounded-xl border border-white/20 bg-white/20 px-[26px] py-3.5 text-[0.95rem] font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/25">Kenali
+              Kami</a>
+          </aside>
+
+          <figure
+            class="order-first m-0 flex w-full items-center justify-center [perspective:1200px] min-[1100px]:order-none">
+            <div
+              class="relative inline-block w-full max-w-[520px] rounded-[28px] border border-white/20 bg-gradient-to-br from-white/40 to-white/10 p-2.5 shadow-[0_25px_45px_rgba(0,0,0,0.22)] transition-[transform,translate,box-shadow] duration-500 before:pointer-events-none before:absolute before:inset-2 before:rounded-[22px] before:border before:border-white/20 hover:-translate-y-1.5 hover:shadow-[0_35px_55px_rgba(0,0,0,0.28)] min-[1100px]:p-3 min-[1100px]:[transform:rotateY(-10deg)_rotateX(3deg)] min-[1100px]:hover:[transform:rotateY(-4deg)_rotateX(1deg)]">
+              <img src="assets/aggota.png" alt="Foto bersama anggota kelas 12 D4" loading="eager" fetchpriority="high"
+                decoding="async"
+                class="block h-auto w-full rounded-[20px] bg-white/10 object-cover saturate-90 contrast-110 min-[1100px]:max-h-[calc(100vh-160px)]" />
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- About -->
+      <!-- About -->
+      <section id="about" class="mx-auto w-[min(1100px,100%)] px-3 py-14 text-center min-[760px]:py-[90px]">
+        <h2 class="mb-3.5 text-center text-[clamp(1.8rem,3vw,2.6rem)] font-bold tracking-[-0.03em]">Tentang Kelas</h2>
+        <p class="mx-auto mb-9 max-w-[560px] text-center leading-[1.8] text-muted">
+          Kelas 12 D4 adalah kelas D4 Teknik Informatika yang saling mendukung
+          dalam belajar, mengerjakan proyek, dan menjelajah bersama.
+        </p>
+        <div id="member-grid" class="flex flex-col items-center gap-4"></div>
+      </section>
+
+      <!-- Karya -->
+      <section id="karya" class="mx-auto w-[min(1100px,100%)] px-3 py-14 text-center min-[760px]:py-[90px]">
+        <h2 class="mb-3.5 text-center text-[clamp(1.8rem,3vw,2.6rem)] font-bold tracking-[-0.03em]">Hasil Karya Kelas
+          Kami</h2>
+        <p class="mx-auto mb-9 max-w-[560px] text-center leading-[1.8] text-muted">
+          Kumpulan proyek dan karya yang telah kami buat bersama.
+        </p>
+        <div id="karya-list" class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 text-left"></div>
+      </section>
+
+      <!-- Events -->
+      <section id="events" class="mx-auto w-[min(1100px,100%)] px-3 py-14 text-center min-[760px]:py-[90px]">
+        <h2 class="mb-3.5 text-center text-[clamp(1.8rem,3vw,2.6rem)] font-bold tracking-[-0.03em]">Events</h2>
+        <p class="mx-auto mb-9 max-w-[560px] text-center leading-[1.8] text-muted">
+          Kegiatan dan acara yang pernah kami ikuti bersama.
+        </p>
+        <div role="region" aria-roledescription="carousel" aria-label="Kegiatan kelas">
+          <div id="event-list" tabindex="0"
+            class="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-smooth pb-2 text-left [scrollbar-width:none] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent [&::-webkit-scrollbar]:hidden">
+          </div>
+          <div id="event-controls" class="mt-5 flex items-center justify-center gap-3">
+            <button id="event-prev" type="button" aria-label="Kegiatan sebelumnya"
+              class="grid size-11 place-items-center rounded-full border border-white/20 bg-white/15 text-white transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-40">
+              <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <span id="event-count" class="min-w-[3.5rem] text-center text-[0.85rem] font-semibold text-muted"
+              aria-live="polite"></span>
+            <button id="event-next" type="button" aria-label="Kegiatan berikutnya"
+              class="grid size-11 place-items-center rounded-full border border-white/20 bg-white/15 text-white transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-40">
+              <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mx-auto w-[min(1400px,100%)] border-t border-soft pt-6 text-center text-[0.85rem] text-muted">
+      <p>&copy; 2026 Kelas 12 D4</p>
+    </footer>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+
+</html>
