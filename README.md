@@ -54,3 +54,10 @@ cat ~/.ssh/id_rsa.pub
 ```
 if there is no key appears, plese generate the key also set global config of git in next section and please add the public key to your github profile.
 
+## Profil pribadi
+
+Situs profil dipublikasikan melalui GitHub Pages dan hanya menerbitkan `index.html`, `script.js`, `style.css`, serta foto di `assets/profile.jpg` (bukan seluruh tugas di repository ini). Setelah perubahan pada branch `main` di-push, workflow **Deploy personal profile** membangun dan menerbitkan situs.
+
+URL situs: <https://jeedm18.github.io/Kelas12-Pemrograman1/>
+
+Nama, email, Instagram, dan foto profil adalah informasi publik di situs ini. Perubahan profil melalui browser tetap tersimpan lokal dan tidak mengubah versi publik.
