@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layanan travel dan sewa mobil yang nyaman, aman, dan siap menemani perjalanan Anda.">
+    <title>Jelajah — Travel &amp; Sewa Mobil</title>
+    <link rel="stylesheet" href="jasatravel.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span>Perjalanan nyaman, tinggal berangkat.</span>
+            <span>Setiap hari · 06.00–22.00 WIB</span>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a class="brand" href="#" aria-label="Jelajah, beranda"><span class="brand-mark">J</span> jelajah</a>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="#layanan">Layanan</a>
+                <a href="#armada">Pilihan mobil</a>
+                <a href="#tentang">Tentang kami</a>
+                <button class="button button-login" id="login-open" type="button">Login</button>
+                <a class="button" href="#pesan">Pesan perjalanan</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow">Teman perjalanan Anda</span>
+                    <h1>Jalan-jalan jadi lebih <span class="hero-highlight">tenang.</span></h1>
+                    <p>Layanan travel dan sewa mobil untuk perjalanan yang nyaman, aman, dan tepat waktu. Anda tinggal duduk santai, kami yang mengantar.</p>
+                    <div class="hero-actions">
+                        <a class="button" href="#pesan">Pesan sekarang <span aria-hidden="true">&nbsp;→</span></a>
+                        <a class="text-link" href="#layanan">Lihat layanan</a>
+                    </div>
+                    <div class="trust-row">
+                        <span class="trust-item"><span class="check">✓</span> Driver berpengalaman</span>
+                        <span class="trust-item"><span class="check">✓</span> Mobil terawat</span>
+                    </div>
+                </div>
+                <div class="hero-visual" role="img" aria-label="Mobil siap menemani perjalanan">
+                    <div class="hero-image"></div>
+                    <div class="floating-card">
+                        <span class="floating-icon" aria-hidden="true">🚘</span>
+                        <div><strong>Siap ke mana saja</strong><span>Perjalanan sesuai rencana Anda</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="layanan">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Layanan kami</span>
+                    <h2>Perjalanan Anda, pilihan Anda</h2>
+                    <p>Dari perjalanan rutin hingga liburan bersama keluarga, kami siap membantu.</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">🛣️</span>
+                        <h3>Travel antar kota</h3>
+                        <p>Perjalanan praktis dengan jadwal dan titik jemput yang bisa disesuaikan.</p>
+                        <a href="#pesan">Rencanakan perjalanan →</a>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">🔑</span>
+                        <h3>Sewa mobil</h3>
+                        <p>Pilih mobil yang pas untuk agenda harian, liburan, maupun perjalanan bisnis.</p>
+                        <a href="#armada">Lihat pilihan mobil →</a>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">🧑‍✈️</span>
+                        <h3>Mobil dengan driver</h3>
+                        <p>Nikmati perjalanan tanpa repot menyetir dengan driver yang ramah dan berpengalaman.</p>
+                        <a href="#pesan">Tanya ketersediaan →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="fleet" id="armada">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Pilihan armada</span>
+                    <h2>Mobil nyaman untuk setiap rencana</h2>
+                    <p>Pilih kendaraan sesuai kebutuhan rombongan Anda. Harga dapat menyesuaikan tujuan dan durasi.</p>
+                </div>
+                <div class="fleet-grid">
+                    <article class="car-card">
+                        <div class="car-image car-one" role="img" aria-label="Mobil keluarga"></div>
+                        <div class="car-info">
+                            <div class="car-title"><div><h3>City Car</h3><small>Ringkas &amp; hemat</small></div><span class="price">Mulai 350rb</span></div>
+                            <div class="car-meta"><span>👤 4 penumpang</span><span>🧳 2 bagasi</span></div>
+                            <button class="button book-car" type="button" data-car="City Car">Pilih mobil</button>
+                        </div>
+                    </article>
+                    <article class="car-card">
+                        <div class="car-image car-two" role="img" aria-label="Mobil premium"></div>
+                        <div class="car-info">
+                            <div class="car-title"><div><h3>Premium</h3><small>Nyaman &amp; elegan</small></div><span class="price">Mulai 550rb</span></div>
+                            <div class="car-meta"><span>👤 4 penumpang</span><span>🧳 3 bagasi</span></div>
+                            <button class="button book-car" type="button" data-car="Premium">Pilih mobil</button>
+                        </div>
+                    </article>
+                    <article class="car-card">
+                        <div class="car-image car-three" role="img" aria-label="Mobil keluarga berkapasitas besar"></div>
+                        <div class="car-info">
+                            <div class="car-title"><div><h3>Family Van</h3><small>Lega untuk keluarga</small></div><span class="price">Mulai 650rb</span></div>
+                            <div class="car-meta"><span>👤 7 penumpang</span><span>🧳 4 bagasi</span></div>
+                            <button class="button book-car" type="button" data-car="Family Van">Pilih mobil</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang">
+            <div class="container why-grid">
+                <div class="why-image" role="img" aria-label="Pemandangan perjalanan darat"></div>
+                <div class="why-copy">
+                    <span class="eyebrow">Kenapa Jelajah?</span>
+                    <h2>Nyaman dari berangkat sampai tujuan</h2>
+                    <p>Kami percaya perjalanan yang baik dimulai dari layanan yang bisa diandalkan. Tim kami siap membantu Anda merencanakan perjalanan dengan mudah.</p>
+                    <div class="benefit-list">
+                        <div class="benefit"><span class="benefit-mark">✓</span><div><strong>Driver profesional</strong><span>Ramah dan mengenal rute.</span></div></div>
+                        <div class="benefit"><span class="benefit-mark">✓</span><div><strong>Armada terawat</strong><span>Nyaman untuk perjalanan Anda.</span></div></div>
+                        <div class="benefit"><span class="benefit-mark">✓</span><div><strong>Harga transparan</strong><span>Informasi biaya sebelum berangkat.</span></div></div>
+                        <div class="benefit"><span class="benefit-mark">✓</span><div><strong>Jadwal fleksibel</strong><span>Atur waktu sesuai kebutuhan.</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking" id="pesan">
+            <div class="container">
+                <div class="booking-panel">
+                    <div class="booking-intro">
+                        <span class="eyebrow">Mulai perjalanan</span>
+                        <h2>Yuk, rencanakan perjalanan Anda.</h2>
+                        <p>Isi detail perjalanan Anda. Tim Jelajah akan menghubungi untuk konfirmasi jadwal dan harga.</p>
+                        <div class="contact-note">Butuh bantuan? Kami siap membantu setiap hari.</div>
+                    </div>
+                    <form class="booking-form" id="booking-form">
+                        <div class="field">
+                            <label for="nama">Nama lengkap</label>
+                            <input id="nama" name="nama" type="text" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="field">
+                            <label for="telepon">Nomor WhatsApp</label>
+                            <input id="telepon" name="telepon" type="tel" placeholder="08xx xxxx xxxx" required>
+                        </div>
+                        <div class="field">
+                            <label for="asal">Kota asal</label>
+                            <input id="asal" name="asal" type="text" placeholder="Contoh: Bandung" required>
+                        </div>
+                        <div class="field">
+                            <label for="tujuan">Kota tujuan</label>
+                            <input id="tujuan" name="tujuan" type="text" placeholder="Contoh: Jakarta" required>
+                        </div>
+                        <div class="field">
+                            <label for="tanggal">Tanggal berangkat</label>
+                            <input id="tanggal" name="tanggal" type="date" required>
+                        </div>
+                        <div class="field">
+                            <label for="mobil">Pilihan layanan</label>
+                            <select id="mobil" name="mobil" required>
+                                <option value="">Pilih layanan</option>
+                                <option>Travel antar kota</option>
+                                <option>City Car</option>
+                                <option>Premium</option>
+                                <option>Family Van</option>
+                                <option>Mobil dengan driver</option>
+                            </select>
+                        </div>
+                        <button class="button" type="submit">Kirim permintaan pemesanan →</button>
+                        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <dialog class="login-dialog" id="login-dialog" aria-labelledby="login-title">
+        <div class="login-heading">
+            <div>
+                <span class="eyebrow">Selamat datang</span>
+                <h2 id="login-title">Login Jelajah</h2>
+            </div>
+            <button class="dialog-close" id="login-close" type="button" aria-label="Tutup login">×</button>
+        </div>
+        <p class="login-description">Masuk ke akun Anda untuk melanjutkan.</p>
+        <form class="login-form" id="login-form">
+            <div class="field">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" placeholder="nama@email.com" autocomplete="username" required>
+            </div>
+            <div class="field">
+                <label for="login-password">Kata sandi</label>
+                <input id="login-password" name="password" type="password" placeholder="Masukkan kata sandi" autocomplete="current-password" required>
+            </div>
+            <button class="button" type="submit">Login</button>
+            <p class="login-message" id="login-message" role="status" aria-live="polite"></p>
+            <p class="demo-note">Admin: <strong>admin@jelajah.id</strong> / <strong>jelajah123</strong><br>Customer: <strong>customer@jelajah.id</strong> / <strong>jelajah123</strong><br>Hanya akun simulasi, belum terhubung ke sistem akun.</p>
+        </form>
+    </dialog>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>© <span id="year"></span> Jelajah Travel &amp; Sewa Mobil</span>
+            <span>Teman perjalanan nyaman Anda.</span>
+        </div>
+    </footer>
+
+    <script src="jasatravel.js" defer></script>
+</body>
+</html>
