@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciyhuy — Artisanal Cafe & Eatery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="locked-until-login">
+    <!-- Efek Kelopak Bunga Sakura & Hati Melayang -->
+    <div class="sakura-container" id="sakuraContainer" aria-hidden="true"></div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon">🌸</span>
+                <div class="logo-text">
+                    <span class="brand-name">Ciyhuy</span>
+                    <span class="brand-sub">Ciyaa &amp; hunky</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Beranda</a>
+                <a href="#about" class="nav-link">Tentang</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#coffee-builder" class="nav-link">Racik Kopi</a>
+                <a href="#fun-zone" class="nav-link">Gacha & Mood</a>
+                <a href="#gallery" class="nav-link">Galeri</a>
+                <a href="#reservation" class="nav-link">Reservasi</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeToggle" aria-label="Ganti Tema" title="Ganti Tema Terang/Gelap">
+                    🌙
+                </button>
+                <button class="auth-btn" id="authBtn" aria-label="Akun Pengguna">
+                    👤 <span id="authBtnText">Masuk</span>
+                </button>
+                <button class="cart-btn" id="cartToggle" aria-label="Buka Keranjang">
+                    🛒 <span class="cart-label">Pesanan</span>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu Navigasi">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="status-pill">
+                    <span class="status-dot" id="storeStatusDot"></span>
+                    <span id="storeStatusText">Buka Setiap Hari • 08.00 – 22.00 WIB</span>
+                </div>
+                <h1>Seduhan Hangat &amp; Hidangan Penuh <em>Cerita</em></h1>
+                <p class="hero-desc">
+                    Nikmati biji kopi pilihan Nusantara yang disangrai segar setiap minggu, dipadukan dengan hidangan
+                    kuliner autentik dan pastry hangat di ruang yang tenang.
+                </p>
+                <div class="hero-cta">
+                    <a href="#menu" class="btn btn-primary">Jelajahi Menu</a>
+                    <a href="#reservation" class="btn btn-outline">Reservasi Meja</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>100%</strong>
+                        <span>Arabika Nusantara</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong>35+</strong>
+                        <span>Menu Spesial</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong>4.9 ★</strong>
+                        <span>1.200+ Ulasan</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image-card">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80"
+                        alt="Suasana Cafe Ciyhuy">
+                    <div class="floating-card card-top">
+                        <span class="floating-emoji">🍓</span>
+                        <div>
+                            <strong>Sweet &amp; Fresh Baked</strong>
+                            <small>Strawberry &amp; Rose Patisserie</small>
+                        </div>
+                    </div>
+                    <div class="floating-card card-bottom">
+                        <span class="floating-emoji">🎀</span>
+                        <div>
+                            <strong>Pink Sakura Latte</strong>
+                            <small>Best Seller Minggu Ini 💖</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Running Cute Marquee Banner -->
+    <div class="cute-marquee">
+        <div class="marquee-track">
+            <span>🌸 Selamat Datang di Ciyhuy Pink Cafe!</span>
+            <span>🍓 Putar Roda Gacha Keberuntungan &amp; Menangkan Macaron Gratis!</span>
+            <span>👑 Member Ciyhuy Otomatis Diskon 15% + Bonus Poin!</span>
+            <span>🧁 Cobain Kuis Mood Hari Ini untuk Rekomendasi Menu Spesialmu!</span>
+            <span>🎀 Kode Promo Spesial: SENJA20 &amp; CIYHUY25</span>
+            <span>🌸 Selamat Datang di Ciyhuy Pink Cafe!</span>
+            <span>🍓 Putar Roda Gacha Keberuntungan &amp; Menangkan Macaron Gratis!</span>
+            <span>👑 Member Ciyhuy Otomatis Diskon 15% + Bonus Poin!</span>
+        </div>
+    </div>
+
+    <!-- Tentang Kami / Keunggulan -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tentang Kami</span>
+                <h2>Lebih Dari Sekadar Tempat Ngopi</h2>
+                <p>Kami meracik setiap cangkir dan piring dengan bahan segar lokal terbaik untuk menemani waktu santai
+                    maupun produktif Anda.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Biji Kopi Pilihan</h3>
+                    <p>Bekerja sama langsung dengan petani lokal dari Gayo, Toraja, Kintamani, hingga Flores untuk rasa
+                        yang autentik.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Kuliner Homemade</h3>
+                    <p>Mulai dari Rice Bowl rempah Nusantara, pasta artisan, hingga croissant renyah dibuat langsung di
+                        dapur kami.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Cozy &amp; Work-Friendly</h3>
+                    <p>Dilengkapi Wi-Fi berkecepatan tinggi, stopkontak di setiap meja, serta area indoor dan outdoor
+                        asri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Daftar Menu</span>
+                <h2>Menu Favorit Kami</h2>
+                <p>Pilih kategori atau cari menu favorit Anda, lalu tambahkan langsung ke daftar pesanan.</p>
+            </div>
+
+            <!-- Filter & Search Controls -->
+            <div class="menu-controls">
+                <div class="category-tabs" id="categoryTabs">
+                    <button class="tab-btn active" data-category="all">Semua</button>
+                    <button class="tab-btn" data-category="coffee">☕ Kopi</button>
+                    <button class="tab-btn" data-category="non-coffee">🍵 Non-Kopi</button>
+                    <button class="tab-btn" data-category="food">🍛 Makanan Berat</button>
+                    <button class="tab-btn" data-category="pastry">🥐 Camilan &amp; Pastry</button>
+                    <button class="tab-btn" data-category="favorites">❤️ Favorit (<span
+                            id="favTabCount">0</span>)</button>
+                </div>
+
+                <div class="menu-right-controls">
+                    <select id="menuSort" class="sort-select" aria-label="Urutkan Menu">
+                        <option value="default">Urutkan: Rekomendasi</option>
+                        <option value="price-asc">Harga: Terendah ke Tertinggi</option>
+                        <option value="price-desc">Harga: Tertinggi ke Terendah</option>
+                        <option value="rating-desc">Rating Tertinggi ★</option>
+                    </select>
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="menuSearch" placeholder="Cari kopi, makanan, atau camilan...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Grid Rendered by JS -->
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+    </section>
+
+    <!-- Custom Coffee Builder (Racik Kopi Sendiri) -->
+    <section class="coffee-builder section" id="coffee-builder">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Eksperimen Barista</span>
+                <h2>Racik Kopi Sesuai Seleramu</h2>
+                <p>Pilih biji kopi, jenis susu, tingkat kemanisan, dan topping favoritmu. Lihat simulasi lapisan gelas
+                    secara langsung!</p>
+            </div>
+
+            <div class="builder-grid">
+                <!-- Visualisasi Gelas Kopi Interaktif -->
+                <div class="cup-preview-card">
+                    <span class="cup-temp-badge" id="cupTempBadge">🧊 Iced Cup</span>
+                    <div class="cup-stage">
+                        <div class="coffee-cup">
+                            <div class="cup-layer layer-topping" id="layerTopping"></div>
+                            <div class="cup-layer layer-milk" id="layerMilk"></div>
+                            <div class="cup-layer layer-sweet" id="layerSweet"></div>
+                            <div class="cup-layer layer-base" id="layerBase"></div>
+                            <div class="cup-ice" id="cupIce">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cup-summary">
+                        <h3 id="customDrinkTitle">Iced Arabika Gayo + Fresh Milk</h3>
+                        <p id="customDrinkDesc">Gula Aren Organik • Tanpa Topping</p>
+                        <div class="cup-price-tag" id="customDrinkPrice">Rp 32.000</div>
+                    </div>
+                </div>
+
+                <!-- Pilihan Kustomisasi -->
+                <div class="builder-controls">
+                    <div class="builder-group">
+                        <label>1. Suhu Penyajian</label>
+                        <div class="option-pills" id="optTemp">
+                            <button type="button" class="opt-pill active" data-val="Iced" data-price="0">🧊 Dingin
+                                (Iced)</button>
+                            <button type="button" class="opt-pill" data-val="Hot" data-price="0">☕ Hangat (Hot)</button>
+                        </div>
+                    </div>
+
+                    <div class="builder-group">
+                        <label>2. Pilih Biji Kopi (Base)</label>
+                        <div class="option-pills" id="optBase">
+                            <button type="button" class="opt-pill active" data-val="Arabika Gayo" data-price="22000"
+                                data-color="#3b2213">Arabika Gayo (Rp 22k)</button>
+                            <button type="button" class="opt-pill" data-val="Cold Brew Toraja" data-price="25000"
+                                data-color="#29160b">Cold Brew Toraja (Rp 25k)</button>
+                            <button type="button" class="opt-pill" data-val="Flores Espresso" data-price="24000"
+                                data-color="#4d2d18">Flores Bajawa (Rp 24k)</button>
+                        </div>
+                    </div>
+
+                    <div class="builder-group">
+                        <label>3. Pilihan Susu</label>
+                        <div class="option-pills" id="optMilk">
+                            <button type="button" class="opt-pill active" data-val="Strawberry Pink Milk"
+                                data-price="8000" data-color="#fbcfe8">🍓 Strawberry Milk (+8k)</button>
+                            <button type="button" class="opt-pill" data-val="Fresh Milk" data-price="6000"
+                                data-color="#fff5f7">Fresh Milk (+6k)</button>
+                            <button type="button" class="opt-pill" data-val="Oat Milk" data-price="10000"
+                                data-color="#f5e6d3">Oat Milk (+10k)</button>
+                        </div>
+                    </div>
+
+                    <div class="builder-group">
+                        <label>4. Pemanis &amp; Sirup</label>
+                        <div class="option-pills" id="optSweet">
+                            <button type="button" class="opt-pill active" data-val="Sakura Rose Syrup" data-price="5000"
+                                data-color="#f472b6">🌸 Sakura Rose (+5k)</button>
+                            <button type="button" class="opt-pill" data-val="Gula Aren Organik" data-price="4000"
+                                data-color="#b45309">Gula Aren (+4k)</button>
+                            <button type="button" class="opt-pill" data-val="Less Sugar / Tanpa Gula" data-price="0"
+                                data-color="transparent">Tanpa Gula (+0)</button>
+                        </div>
+                    </div>
+
+                    <div class="builder-group">
+                        <label>5. Topping Spesial</label>
+                        <div class="option-pills" id="optTopping">
+                            <button type="button" class="opt-pill active" data-val="Pink Berry Whipped Cream"
+                                data-price="6000" data-color="#fda4af">🎀 Pink Berry Cream (+6k)</button>
+                            <button type="button" class="opt-pill" data-val="Sea Salt Cream" data-price="6000"
+                                data-color="#fffdf9">Sea Salt Cream (+6k)</button>
+                            <button type="button" class="opt-pill" data-val="Tanpa Topping" data-price="0"
+                                data-color="transparent">Tanpa Topping</button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block" id="addCustomCoffeeBtn">
+                        ✨ Masukkan Racikan ke Pesanan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo / Highlight Banner -->
+    <section class="promo-banner">
+        <div class="container promo-inner">
+            <div class="promo-text">
+                <span class="promo-badge">PROMO SORE HARI</span>
+                <h2>Paket Ciyhuy Berdua Hanya Rp 75.000</h2>
+                <p>Dapatkan 2 Es Kopi Susu Pink Ciyhuy + 1 Platter Mix Croissant &amp; Macarons setiap pukul 15.00 –
+                    18.00 WIB.
+                </p>
+            </div>
+            <button class="btn btn-light" id="claimPromoBtn">Klaim Paket ke Pesanan</button>
+        </div>
+    </section>
+
+    <!-- Fun Zone: Kuis Mood Hari Ini & Roda Gacha Keberuntungan Ciyhuy -->
+    <section class="fun-zone section" id="fun-zone">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">✨ Pojok Seru &amp; Lucu</span>
+                <h2>Kuis Mood &amp; Gacha Keberuntungan Ciyhuy</h2>
+                <p>Pilih perasaanmu hari ini untuk dapat rekomendasi paket manis, atau putar roda gacha untuk hadiah
+                    kejutan!</p>
+            </div>
+
+            <div class="fun-zone-grid">
+                <!-- Kiri: Kuis Mood Matcher -->
+                <div class="fun-card mood-card">
+                    <div class="fun-card-badge">🔮 Mood Matcher</div>
+                    <h3>Apa Mood Kamu Hari Ini?</h3>
+                    <p class="fun-sub">Klik salah satu mood di bawah, biar Barista Ciyhuy pilihkan pasangan menu paling
+                        pas buatmu!</p>
+
+                    <div class="mood-buttons" id="moodButtons">
+                        <button type="button" class="mood-btn active" data-mood="sweet">
+                            <span>🥺</span> Butuh Pelukan Manis
+                        </button>
+                        <button type="button" class="mood-btn" data-mood="focus">
+                            <span>⚡</span> Semangat Nugas / WFC
+                        </button>
+                        <button type="button" class="mood-btn" data-mood="romance">
+                            <span>💕</span> Lagi Kasmaran / Date
+                        </button>
+                        <button type="button" class="mood-btn" data-mood="hungry">
+                            <span>😋</span> Lapar Banget!
+                        </button>
+                    </div>
+
+                    <div class="mood-result-box" id="moodResultBox">
+                        <div class="mood-result-emoji" id="moodResultEmoji">🍡🍰</div>
+                        <div class="mood-result-info">
+                            <h4 id="moodResultTitle">Paket Pelukan Manis</h4>
+                            <p id="moodResultDesc">Pink Velvet Marshmallow Choco + Berry Shortcake. Dijamin bikin hatimu
+                                langsung meleleh bahagia!</p>
+                            <div class="mood-price-row">
+                                <span class="mood-price" id="moodResultPrice">Rp 62.000</span>
+                                <small class="mood-save">Hemat Rp 6.000!</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block" id="orderMoodBundleBtn">
+                        💖 Pesan Paket Mood Ini Sekarang
+                    </button>
+                </div>
+
+                <!-- Kanan: Roda Gacha Keberuntungan Ciyhuy -->
+                <div class="fun-card gacha-card">
+                    <div class="fun-card-badge">🎡 Lucky Gacha</div>
+                    <h3>Putar Roda Keberuntungan!</h3>
+                    <p class="fun-sub">Dapatkan hadiah gratis mulai dari Voucher Diskon Rp 25.000, Pink Macaron Gratis,
+                        hingga Poin Member!</p>
+
+                    <div class="wheel-stage">
+                        <div class="wheel-pointer">🔻</div>
+                        <div class="lucky-wheel" id="luckyWheel">
+                            <span class="wheel-slice s1">🎟️ 25K</span>
+                            <span class="wheel-slice s2">🧁 Free</span>
+                            <span class="wheel-slice s3">👑 +50P</span>
+                            <span class="wheel-slice s4">🍓 15K</span>
+                            <span class="wheel-slice s5">🧋 10K</span>
+                            <span class="wheel-slice s6">💖 +30P</span>
+                            <div class="wheel-center">🌸</div>
+                        </div>
+                    </div>
+
+                    <p class="wheel-status" id="wheelStatusText">Siap mencoba keberuntunganmu hari ini? ✨</p>
+                    <button type="button" class="btn btn-primary btn-block" id="spinWheelBtn">
+                        🎰 Putar Roda Gacha Sekarang!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Suasana Cafe (Interactive Lightbox) -->
+    <section class="gallery section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Suasana Ruang</span>
+                <h2>Sudut Nyaman di Ciyhuy</h2>
+                <p>Klik pada foto untuk memperbesar tampilan sudut ruangan favorit pelanggan kami.</p>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-title="Slow Bar & Roastery Corner"
+                    data-caption="Tempat barista kami menyeduh kopi manual V60 dan menyangrai biji kopi segar.">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
+                        alt="Slow Bar & Roastery Corner" loading="lazy">
+                    <div class="gallery-overlay">
+                        <strong>Slow Bar &amp; Roastery Corner</strong>
+                        <span>🔍 Klik untuk perbesar</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Taman Senja Semi-Outdoor"
+                    data-caption="Area terbuka hijau dengan sirkulasi udara sejuk, cocok untuk sore hari.">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80"
+                        alt="Taman Senja Semi-Outdoor" loading="lazy">
+                    <div class="gallery-overlay">
+                        <strong>Taman Senja Semi-Outdoor</strong>
+                        <span>🔍 Klik untuk perbesar</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Quiet Work & Study Zone (Lantai 2)"
+                    data-caption="Meja ergonomis dengan stopkontak di tiap kursi dan Wi-Fi cepat hingga 150 Mbps.">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+                        alt="Quiet Work Zone" loading="lazy">
+                    <div class="gallery-overlay">
+                        <strong>Quiet Work &amp; Study Zone</strong>
+                        <span>🔍 Klik untuk perbesar</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Artisan Pastry Display"
+                    data-caption="Etalase croissant, danish, dan burnt cheesecake yang dipanggang setiap pagi.">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+                        alt="Artisan Pastry Display" loading="lazy">
+                    <div class="gallery-overlay">
+                        <strong>Artisan Pastry &amp; Dining</strong>
+                        <span>🔍 Klik untuk perbesar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Cerita Pelanggan</span>
+                <h2>Apa Kata Mereka?</h2>
+                <p>Pengalaman hangat dari teman-teman yang sudah mampir ke Ciyhuy.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Es Kopi Susu Gula Aren-nya creamy tapi kopinya tetap berasa strong. Suasana lantai
+                        2 enak banget buat WFC seharian!"</p>
+                    <div class="author">
+                        <div class="avatar">AN</div>
+                        <div>
+                            <strong>Andini Putri</strong>
+                            <span>UI/UX Designer</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Nasi Goreng Sei Sapi dan Matcha Latte-nya juara! Porsinya mengenyangkan dan
+                        pelayanannya ramah banget."</p>
+                    <div class="author">
+                        <div class="avatar">R</div>
+                        <div>
+                            <strong>Rizky Pratama</strong>
+                            <span>Food Blogger</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Almond Croissant-nya flaky dan wangi butter asli. Tempat favorit buat kumpul
+                        keluarga setiap akhir pekan."</p>
+                    <div class="author">
+                        <div class="avatar">CL</div>
+                        <div>
+                            <strong>Citra Lestari</strong>
+                            <span>Pelanggan Setia</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Dinding Catatan Manis Pengunjung (Sweet Sticky Notes Wall) -->
+            <div class="sweet-wall-box">
+                <div class="sweet-wall-header">
+                    <div>
+                        <span class="section-tag">💌 Dinding Pesan Manis</span>
+                        <h3>Tempelkan Catatan Lucumu di Dinding Ciyhuy!</h3>
+                    </div>
+                </div>
+
+                <form id="sweetNoteForm" class="sweet-note-form">
+                    <input type="text" id="noteAuthor" placeholder="Nama panggilanmu (Contoh: Ciya)" maxlength="24"
+                        required>
+                    <input type="text" id="noteMessage"
+                        placeholder="Tulis pesan manis, harapan, atau menu favoritmu di sini... 🌸" maxlength="110"
+                        required>
+                    <select id="noteColor" aria-label="Pilih Warna Catatan">
+                        <option value="pink">🌸 Sakura Pink</option>
+                        <option value="peach">🍑 Peach Cream</option>
+                        <option value="lavender">💜 Lavender Blush</option>
+                        <option value="mint">🍵 Matcha Mint</option>
+                    </select>
+                    <select id="noteSticker" aria-label="Pilih Stiker">
+                        <option value="🧸">🧸 Beruang</option>
+                        <option value="🐰">🐰 Kelinci</option>
+                        <option value="🍓">🍓 Stroberi</option>
+                        <option value="🎀">🎀 Pita Pink</option>
+                        <option value="🐱">🐱 Kucing</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary btn-sm">📌 Tempel Catatan</button>
+                </form>
+
+                <div class="sticky-notes-grid" id="stickyNotesGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="reservation section" id="reservation">
+        <div class="container reservation-wrapper">
+            <div class="reservation-info">
+                <span class="section-tag">Reservasi Meja</span>
+                <h2>Pastikan Kursi Terbaik untuk Momen Anda</h2>
+                <p>Ingin mengadakan rapat kecil, makan malam bersama keluarga, atau sekadar memastikan meja favorit
+                    tersedia? Isi formulir reservasi di samping.</p>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <strong>Lokasi Cafe</strong>
+                            <p>Jl. Cendana No. 42, Bandung, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🕒</span>
+                        <div>
+                            <strong>Jam Operasional</strong>
+                            <p>Senin – Jumat: 08.00 – 22.00 WIB<br>Sabtu – Minggu: 07.00 – 23.00 WIB</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <strong>Kontak Langsung</strong>
+                            <p>+62 812-3456-7890 (WhatsApp)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="reservation-form" id="reservationForm">
+                <h3>Formulir Reservasi</h3>
+                <div class="form-group">
+                    <label for="resName">Nama Lengkap</label>
+                    <input type="text" id="resName" placeholder="Contoh: Budi Santoso" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="resPhone">Nomor WhatsApp</label>
+                        <input type="tel" id="resPhone" placeholder="0812xxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resGuests">Jumlah Tamu</label>
+                        <select id="resGuests" required>
+                            <option value="1-2 Orang">1 – 2 Orang</option>
+                            <option value="3-4 Orang" selected>3 – 4 Orang</option>
+                            <option value="5-8 Orang">5 – 8 Orang</option>
+                            <option value="Lebih dari 8 Orang">Lebih dari 8 Orang (VIP)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="resDate">Tanggal</label>
+                        <input type="date" id="resDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resTime">Waktu Kedatangan</label>
+                        <input type="time" id="resTime" value="16:00" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="resArea">Pilihan Area</label>
+                    <select id="resArea">
+                        <option value="Indoor (AC & Non-Smoking)">Indoor (AC &amp; Non-Smoking)</option>
+                        <option value="Semi-Outdoor (Taman Senja)">Semi-Outdoor (Taman Senja)</option>
+                        <option value="Lantai 2 (Quiet Work Zone)">Lantai 2 (Quiet Work Zone)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="resNotes">Catatan Tambahan (Opsional)</label>
+                    <textarea id="resNotes" rows="2"
+                        placeholder="Kursi bayi, colokan listrik, dekorasi ulang tahun, dll."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Konfirmasi Reservasi</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-icon">☕</span>
+                    <div class="logo-text">
+                        <span class="brand-name">Ciyhuy</span>
+                        <span class="brand-sub">Cafe & Roastery</span>
+                    </div>
+                </a>
+                <p>Menghadirkan kehangatan kopi Nusantara dan sajian kuliner terbaik untuk setiap cerita Anda.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#menu">Daftar Menu</a></li>
+                    <li><a href="#reservation">Reservasi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Kategori Populer</h4>
+                <ul>
+                    <li><a href="#menu" data-filter-link="coffee">Signature Coffee</a></li>
+                    <li><a href="#menu" data-filter-link="non-coffee">Artisan Tea &amp; Matcha</a></li>
+                    <li><a href="#menu" data-filter-link="food">Nusantara Rice Bowl</a></li>
+                    <li><a href="#menu" data-filter-link="pastry">Fresh Croissant</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Member Senja Club</h4>
+                <p>Dapatkan voucher diskon 20% untuk pembelian pertama Anda.</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" id="newsletterEmail" placeholder="Masukkan email Anda" required>
+                    <button type="submit" class="btn btn-primary">Gabung</button>
+                </form>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Ciyhuy Cafe. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer (Sidebar Pesanan) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+        <div class="cart-header">
+            <h3>🛒 Daftar Pesanan Anda</h3>
+            <button class="close-btn" id="closeCartBtn" aria-label="Tutup Keranjang">&times;</button>
+        </div>
+
+        <div class="cart-body" id="cartItemsContainer">
+            <!-- Diisi otomatis melalui JavaScript -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="table-input-group">
+                <label for="tableNumber">Nomor Meja / Nama Pemesan:</label>
+                <input type="text" id="tableNumber" placeholder="Contoh: Meja 08 - Dary">
+            </div>
+            <div class="voucher-input-group">
+                <input type="text" id="voucherCodeInput" placeholder="Kode Promo (Coba: SENJA20)">
+                <button type="button" class="btn btn-outline btn-sm" id="applyVoucherBtn">Pakai</button>
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">Rp 0</span>
+                </div>
+                <div class="summary-row discount-row" id="memberDiscountRow" style="display: none;">
+                    <span>👑 Diskon Member (15%)</span>
+                    <span id="cartDiscount">-Rp 0</span>
+                </div>
+                <div class="summary-row discount-row" id="voucherDiscountRow" style="display: none;">
+                    <span id="voucherLabel">🎟️ Voucher Promo</span>
+                    <span id="cartVoucherDiscount">-Rp 0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Pajak &amp; Layanan (10%)</span>
+                    <span id="cartTax">Rp 0</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total Bayar</span>
+                    <span id="cartTotal">Rp 0</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-outline btn-sm" id="clearCartBtn">Kosongkan</button>
+                <button class="btn btn-primary" id="checkoutBtn">Buat Pesanan Sekarang</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Full-Screen Login Gate (Wajib Login Sebelum Masuk Website) -->
+    <div class="modal-overlay login-gate-overlay open" id="authModalOverlay">
+        <div class="modal-card auth-modal-card cute-bounce-in">
+            <!-- Maskot Interaktif Lucu -->
+            <div class="mascot-container">
+                <div class="mascot-avatar" id="loginMascot">🧸</div>
+                <div class="mascot-bubble" id="mascotSpeech">
+                    Halo! Login dulu yuk sebelum masuk ke <strong>Ciyhuy Pink Cafe</strong> 🌸🍓
+                </div>
+            </div>
+
+            <div class="modal-header-bar"
+                style="justify-content: center; border-bottom: none; padding-bottom: 4px; margin-bottom: 10px;">
+                <h3 id="authModalTitle" style="text-align: center;">✨ Selamat Datang di Ciyhuy ✨</h3>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-auth-tab="login">🎀 Masuk (Login)</button>
+                <button class="auth-tab" data-auth-tab="register">🌸 Daftar Member Baru</button>
+            </div>
+
+            <!-- Form Login -->
+            <form id="loginForm" class="auth-form">
+                <div class="demo-credentials-box">
+                    <p class="demo-title">⚡ Klik 1x untuk Pilih Akun Demo:</p>
+                    <div class="demo-btn-group">
+                        <button type="button" class="demo-pill" id="fillMemberBtn">
+                            👑 Akun Member (Diskon 15%)
+                        </button>
+                        <button type="button" class="demo-pill" id="fillAdminBtn">
+                            🛠️ Akun Admin (Kelola Cafe)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="email@senjarasa.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Kata Sandi</label>
+                    <input type="password" id="loginPassword" placeholder="Masukkan kata sandi" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">💖 Masuk ke Cafe Sekarang</button>
+            </form>
+
+            <!-- Form Register Member Baru -->
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <label for="regName">Nama Lengkap</label>
+                    <input type="text" id="regName" placeholder="Contoh: Nadia Lestari" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" placeholder="nadia@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Kata Sandi</label>
+                    <input type="password" id="regPassword" placeholder="Minimal 6 karakter" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">🍓 Daftar &amp; Masuk (+100 Poin)</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Dashboard Akun (Member & Admin) -->
+    <div class="modal-overlay" id="dashboardModalOverlay">
+        <div class="modal-card dashboard-modal-card">
+            <div class="modal-header-bar">
+                <div class="dashboard-user-head">
+                    <span class="role-badge" id="dashRoleBadge">MEMBER</span>
+                    <h3 id="dashTitle">Panel Akun</h3>
+                </div>
+                <div class="dashboard-head-actions">
+                    <button class="btn btn-outline btn-sm" id="logoutBtn">Keluar (Logout)</button>
+                    <button class="close-btn" id="closeDashModalBtn" aria-label="Tutup">&times;</button>
+                </div>
+            </div>
+
+            <!-- Konten Dashboard Member -->
+            <div id="memberDashboardContent" style="display: none;">
+                <div class="member-stats-grid">
+                    <div class="member-stat-card">
+                        <span>Status Keanggotaan</span>
+                        <strong>👑 Senja Gold Member</strong>
+                        <small>Diskon otomatis 15% di semua menu</small>
+                    </div>
+                    <div class="member-stat-card">
+                        <span>Poin Loyalitas</span>
+                        <strong id="memberPointsDisplay">120 Poin</strong>
+                        <small>+10 Poin setiap transaksi pesanan</small>
+                    </div>
+                </div>
+
+                <div class="dash-section" style="margin-bottom: 18px;">
+                    <h4>🎁 Tukar Poin Senja Club</h4>
+                    <div class="rewards-grid">
+                        <div class="reward-card">
+                            <div>
+                                <strong>Voucher Potongan Rp 15.000</strong>
+                                <small>Tukarkan dengan 50 Poin</small>
+                            </div>
+                            <button type="button" class="mini-btn" data-redeem-points="50" data-redeem-val="15000"
+                                data-redeem-code="POIN15K">
+                                Tukar 50 Poin
+                            </button>
+                        </div>
+                        <div class="reward-card">
+                            <div>
+                                <strong>Voucher Potongan Rp 30.000</strong>
+                                <small>Tukarkan dengan 100 Poin</small>
+                            </div>
+                            <button type="button" class="mini-btn" data-redeem-points="100" data-redeem-val="30000"
+                                data-redeem-code="POIN30K">
+                                Tukar 100 Poin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-section">
+                    <h4>🧾 Riwayat Pesanan Saya</h4>
+                    <div id="memberOrdersList" class="dash-list"></div>
+                </div>
+            </div>
+
+            <!-- Konten Dashboard Admin -->
+            <div id="adminDashboardContent" style="display: none;">
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-box">
+                        <span>Total Menu</span>
+                        <strong id="adminStatMenus">0</strong>
+                    </div>
+                    <div class="admin-stat-box">
+                        <span>Pesanan Masuk</span>
+                        <strong id="adminStatOrders">0</strong>
+                    </div>
+                    <div class="admin-stat-box">
+                        <span>Reservasi Meja</span>
+                        <strong id="adminStatRes">0</strong>
+                    </div>
+                </div>
+
+                <div class="admin-tabs">
+                    <button class="admin-tab active" data-admin-tab="orders">📦 Pesanan Masuk</button>
+                    <button class="admin-tab" data-admin-tab="reservations">📅 Reservasi Meja</button>
+                    <button class="admin-tab" data-admin-tab="menus">☕ Kelola Menu</button>
+                </div>
+
+                <!-- Tab Admin: Pesanan -->
+                <div class="admin-panel" id="adminOrdersPanel">
+                    <div id="adminOrdersList" class="dash-list"></div>
+                </div>
+
+                <!-- Tab Admin: Reservasi -->
+                <div class="admin-panel" id="adminReservationsPanel" style="display: none;">
+                    <div id="adminReservationsList" class="dash-list"></div>
+                </div>
+
+                <!-- Tab Admin: Tambah & Hapus Menu -->
+                <div class="admin-panel" id="adminMenusPanel" style="display: none;">
+                    <form id="addMenuForm" class="admin-add-menu-form">
+                        <h4>+ Tambah Menu Baru ke Katalog</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="newMenuName">Nama Menu</label>
+                                <input type="text" id="newMenuName" placeholder="Contoh: Affogato Ice Cream" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newMenuCategory">Kategori</label>
+                                <select id="newMenuCategory" required>
+                                    <option value="coffee">Kopi</option>
+                                    <option value="non-coffee">Non-Kopi</option>
+                                    <option value="food">Makanan Berat</option>
+                                    <option value="pastry">Camilan &amp; Pastry</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="newMenuPrice">Harga (Rp)</label>
+                                <input type="number" id="newMenuPrice" placeholder="30000" min="5000" step="1000"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newMenuBadge">Label / Badge</label>
+                                <input type="text" id="newMenuBadge" placeholder="Menu Baru" value="Menu Baru" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newMenuDesc">Deskripsi Singkat</label>
+                            <input type="text" id="newMenuDesc"
+                                placeholder="Satu scoop vanilla gelato disiram double shot espresso hangat." required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">+ Simpan Menu Baru</button>
+                    </form>
+
+                    <h4 style="margin-top: 18px; margin-bottom: 10px;">Daftar Menu Saat Ini</h4>
+                    <div id="adminMenusList" class="dash-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Struk / Konfirmasi -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <div class="modal-icon" id="modalIcon">✅</div>
+            <h3 id="modalTitle">Pesanan Berhasil!</h3>
+            <div id="modalBody" class="modal-body"></div>
+            <button class="btn btn-primary btn-block" id="closeModalBtn">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Modal Lightbox Galeri -->
+    <div class="modal-overlay" id="lightboxOverlay">
+        <div class="modal-card lightbox-card">
+            <button class="close-btn lightbox-close" id="closeLightboxBtn" aria-label="Tutup Galeri">&times;</button>
+            <img id="lightboxImg" src="" alt="Galeri Suasana Cafe">
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tombol Kembali ke Atas -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Kembali ke Atas" title="Kembali ke Atas">↑</button>
+
+    <!-- Maskot Kucing Cafe Interaktif Mengambang (Floating Virtual Pet) -->
+    <div class="cafe-pet-widget" id="cafePetWidget">
+        <div class="pet-speech-bubble" id="petSpeechBubble">
+            Meow~ Elus aku atau kasih kue dong! 🍓🐾
+        </div>
+        <div class="pet-card">
+            <button type="button" class="pet-avatar-btn" id="petAvatarBtn" title="Klik untuk elus Mochi!">
+                <span id="petEmoji">🐱</span>
+                <span class="pet-heart-badge" id="petLoveCount">♥ 5</span>
+            </button>
+            <div class="pet-actions">
+                <button type="button" class="pet-mini-btn" id="petPatBtn" title="Elus Kucing">👋 Elus</button>
+                <button type="button" class="pet-mini-btn" id="petFeedBtn" title="Beri Kue Stroberi">🍰 Kasih
+                    Kue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-const EMOJI_DEFAULT = '✨'; // emoji untuk anggota yang tidak punya emoji sendiri
+const EMOJI_DEFAULT = '✨';
 
 const anggota = [
     { nama: 'MUHAMAD IHSAN AL ARABI', peran: 'Ketua Kelas', motivasi: 'Diawali dengan bismillah Diakhiri dengan alhamdulillah', emoji: '👑', img: 'assets/MUHAMAD IHSAN AL ARABI.jpeg' },
