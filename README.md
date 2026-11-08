@@ -56,7 +56,7 @@ if there is no key appears, plese generate the key also set global config of git
 
 ## Profil pribadi
 
-Situs profil dipublikasikan melalui GitHub Pages dan hanya menerbitkan `index.html`, `script.js`, `style.css`, serta foto di `assets/profile.jpg` (bukan seluruh tugas di repository ini). Setelah perubahan pada branch `main` di-push, workflow **Deploy personal profile** membangun dan menerbitkan situs.
+Situs profil dipublikasikan melalui GitHub Pages dan hanya menerbitkan `index.html`, `script.js`, `style.css`, serta foto di `assets/profile.jpg` (bukan seluruh tugas di repository ini). Aktifkan GitHub Pages satu kali di **Settings → Pages → Build and deployment → Source: GitHub Actions**, lalu jalankan **Actions → Deploy personal profile → Run workflow** untuk publikasi pertama. Setelah itu, perubahan yang di-push ke branch `main` akan diterbitkan otomatis.
 
 URL situs: <https://jeedm18.github.io/Kelas12-Pemrograman1/>
 
