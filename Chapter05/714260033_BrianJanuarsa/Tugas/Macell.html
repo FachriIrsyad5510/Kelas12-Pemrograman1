@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Temukan koleksi fashion pilihan dari macell.raw."
+    />
+    <title>macell.raw — Wear your own story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    0
+    <div class="announcement">
+      FREE SHIPPING untuk pembelian di atas Rp500.000
+    </div>
+
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="macell.raw, beranda"
+        >macell<span>.</span>raw</a
+      >
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="#koleksi">Koleksi</a>
+        <a href="#cerita">Cerita kami</a>
+        <a href="#footer">Kontak</a>
+      </nav>
+      <div class="header-actions">
+        <button class="text-button" id="login-button" type="button">
+          Masuk
+        </button>
+        <button
+          class="dark-button signup-button"
+          id="signup-button"
+          type="button"
+        >
+          Daftar
+        </button>
+        <span class="user-greeting" id="user-greeting" hidden></span>
+        <button class="text-button" id="logout-button" type="button" hidden>
+          Keluar
+        </button>
+        <button
+          class="cart-button"
+          id="cart-button"
+          type="button"
+          aria-label="Keranjang, 0 barang"
+          aria-controls="cart-modal"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 8H6"
+            />
+            <circle cx="10" cy="20" r="1" />
+            <circle cx="18" cy="20" r="1" />
+          </svg>
+          <span id="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="cerita">
+        <div class="hero-copy">
+          <p class="eyebrow">Pakaian untuk cerita sehari-hari</p>
+          <h1>Wear your<br /><em>own story.</em></h1>
+          <p class="hero-description">
+            Pilihan esensial yang nyaman, timeless, dan selalu terasa seperti
+            kamu.
+          </p>
+          <a class="dark-button hero-link" href="#koleksi">
+            Temukan koleksi <span aria-hidden="true">↗</span>
+          </a>
+          <div class="hero-note">
+            <span></span> Dibuat dengan hati, dipakai setiap hari.
+          </div>
+        </div>
+        <div
+          class="hero-image"
+          role="img"
+          aria-label="Model mengenakan outfit kasual bernuansa netral"
+        >
+          <div class="image-caption">
+            THE EVERYDAY EDIT <span>01 / 04</span>
+          </div>
+        </div>
+        <div class="hero-side-label">JAKARTA · EST. 2024</div>
+      </section>
+
+      <section class="collection section-wrap" id="koleksi">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Pilihan untukmu</p>
+            <h2>Favorit <em>minggu ini</em></h2>
+          </div>
+          <a class="underlined-link" href="#produk"
+            >Lihat semua produk <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="product-grid" id="produk">
+          <article class="product-card">
+            <div class="product-image image-one">
+              <span class="product-tag">BEST SELLER</span>
+              <button
+                class="add-button"
+                type="button"
+                data-product="Everyday Shirt"
+                aria-label="Tambah Everyday Shirt ke keranjang"
+              >
+                +
+              </button>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>POLO HENLEY</h3>
+                <p>White · Relaxed fit</p>
+              </div>
+              <span>Rp140.000</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image image-two">
+              <button
+                class="add-button"
+                type="button"
+                data-product="Soft Knit Top"
+                aria-label="Tambah Soft Knit Top ke keranjang"
+              >
+                +
+              </button>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>POLO HENLEY</h3>
+                <p>Oatmeal · Soft touch</p>
+              </div>
+              <span>Rp140.000</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image image-three">
+              <button
+                class="add-button"
+                type="button"
+                data-product="Daily Trousers"
+                aria-label="Tambah Daily Trousers ke keranjang"
+              >
+                +
+              </button>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>POLO HENLEY</h3>
+                <p>Sand · Easy straight</p>
+              </div>
+              <span>Rp140.000</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image image-four">
+              <button
+                class="add-button"
+                type="button"
+                data-product="Sunday Cardigan"
+                aria-label="Tambah Sunday Cardigan ke keranjang"
+              >
+                +
+              </button>
+            </div>
+            <div class="product-info">
+              <div>
+                <h3>POLO HENLEY</h3>
+                <p>Mocha · Cozy knit</p>
+              </div>
+              <span>Rp140.000</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="quote-banner">
+        <p>
+          “Style bukan tentang mengikuti semua tren.<br />Ini tentang merasa
+          nyaman menjadi diri sendiri.”
+        </p>
+        <span>— macell.raw studio</span>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <a class="wordmark" href="#">macell<span>.</span>raw</a>
+      <p>Everyday pieces, made for your story.</p>
+      <span>© 2026 macell.raw</span>
+    </footer>
+
+    <div class="modal-backdrop" id="auth-modal" hidden>
+      <section
+        class="auth-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-title"
+      >
+        <button
+          class="close-button"
+          id="close-modal"
+          type="button"
+          aria-label="Tutup"
+        >
+          ×
+        </button>
+        <p class="eyebrow">Selamat datang di macell.raw</p>
+        <h2 id="auth-title">Masuk ke akunmu</h2>
+        <div
+          class="auth-tabs"
+          role="tablist"
+          aria-label="Pilih masuk atau daftar"
+        >
+          <button
+            class="auth-tab is-active"
+            id="login-tab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+          >
+            Masuk
+          </button>
+          <button
+            class="auth-tab"
+            id="signup-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+          >
+            Daftar
+          </button>
+        </div>
+        <form id="auth-form">
+          <label id="name-field" hidden>
+            Nama lengkap
+            <input
+              id="name-input"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Nama kamu"
+            />
+          </label>
+          <label>
+            Email
+            <input
+              id="email-input"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="nama@email.com"
+              required
+            />
+          </label>
+          <label>
+            Password
+            <input
+              id="password-input"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              minlength="6"
+              placeholder="Minimal 6 karakter"
+              required
+            />
+          </label>
+          <label id="confirm-field" hidden>
+            Konfirmasi password
+            <input
+              id="confirm-input"
+              name="confirmPassword"
+              type="password"
+              autocomplete="new-password"
+              minlength="6"
+              placeholder="Ulangi password"
+            />
+          </label>
+          <p
+            class="form-message"
+            id="form-message"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <button
+            class="dark-button submit-button"
+            id="submit-auth"
+            type="submit"
+          >
+            Masuk
+          </button>
+        </form>
+        <p class="demo-note">
+          Demo toko: akun hanya tersimpan selama halaman ini terbuka.
+        </p>
+      </section>
+    </div>
+    <div class="cart-backdrop" id="cart-modal" hidden>
+      <section
+        class="cart-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cart-title"
+        aria-describedby="cart-description"
+        tabindex="-1"
+      >
+        <header class="cart-header">
+          <div>
+            <p class="eyebrow">Pilihanmu</p>
+            <h2 id="cart-title">Keranjang</h2>
+          </div>
+          <button
+            class="close-button"
+            id="close-cart"
+            type="button"
+            aria-label="Tutup keranjang"
+          >
+            ×
+          </button>
+        </header>
+        <p class="cart-description" id="cart-description">
+          Barang yang kamu pilih akan ditampilkan di sini.
+        </p>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-empty" id="cart-empty" hidden>
+          <span class="cart-empty-icon" aria-hidden="true">◇</span>
+          <h3>Keranjangmu masih kosong</h3>
+          <p>Temukan item favoritmu dan tambahkan ke keranjang.</p>
+        </div>
+        <div class="cart-footer" id="cart-footer" hidden>
+          <div class="cart-subtotal">
+            <span>Subtotal</span>
+            <strong id="cart-subtotal">Rp0</strong>
+          </div>
+          <p>Biaya pengiriman dihitung saat checkout.</p>
+          <button class="dark-button cart-continue" id="continue-shopping" type="button">
+            Lanjutkan belanja
+          </button>
+        </div>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
