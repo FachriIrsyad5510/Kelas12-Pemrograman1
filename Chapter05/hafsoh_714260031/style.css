@@ -1,0 +1,113 @@
+/* ===== CSS: bagian TAMPILAN ===== */
+
+/* 1. Variabel warna (mudah diganti di satu tempat) */
+:root {
+  --kertas: #f6b5dd;
+  --kartu: #ffffff;
+  --tinta: #14213d;
+  --pudar: #5e4155;
+  --garis: #f171a7;
+  --aksen: #da96caee;
+  --stabilo: #f379d6ee;
+  --tinggi: #d63b3b;
+  --sedang: #e8633a;
+  --rendah: #4bca54;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+/* Mode gelap otomatis mengikuti HP */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --kertas: #0f1626; --kartu: #18223a; --tinta: #e8eefc;
+    --pudar: #93a1c0; --garis: #2b3858; --aksen: #7b9bff;
+  }
+}
+:root[data-theme="dark"] {
+  --kertas: #0f1626; --kartu: #18223a; --tinta: #e8eefc;
+  --pudar: #93a1c0; --garis: #2b3858; --aksen: #7b9bff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--kertas);
+  color: var(--tinta);
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  /* Pola kotak-kotak seperti buku tulis */
+  background-image:
+    linear-gradient(var(--garis) 1px, transparent 1px),
+    linear-gradient(90deg, var(--garis) 1px, transparent 1px);
+  background-size: 28px 28px;
+  min-height: 100vh;
+}
+
+.app { max-width: 520px; margin: 0 auto; padding: 24px 16px 48px; }
+
+h1 { font-size: 2.2rem; font-weight: 800; margin: 0 0 4px; letter-spacing: -0.03em; }
+.sub { margin: 0 0 20px; color: var(--pudar); }
+
+/* 2. Kartu putih tempat isi aplikasi */
+.kartu {
+  background: var(--kartu);
+  border: 2px solid var(--tinta);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 5px 5px 0 var(--tinta);   /* bayangan tegas ala sticker */
+  margin-bottom: 18px;
+}
+
+/* 3. Form tambah tugas (pakai flexbox biar rapi sejajar) */
+.form { display: flex; flex-wrap: wrap; gap: 8px; }
+input[type="text"] { flex: 1 1 100%; }
+input, select, button { font: inherit; color: inherit; }
+input[type="text"], select {
+  padding: 10px 12px;
+  border: 2px solid var(--garis);
+  border-radius: 10px;
+  background: var(--kartu);
+}
+input[type="text"]:focus, select:focus, button:focus-visible {
+  outline: 3px solid var(--aksen);
+  outline-offset: 1px;
+}
+select { flex: 1; }
+.btn {
+  padding: 10px 16px; border: 2px solid var(--tinta); border-radius: 10px;
+  background: var(--aksen); color: #fff; font-weight: 600; cursor: pointer;
+}
+.btn:active { transform: translateY(2px); }
+[data-theme="dark"] .btn { color: #0f1626; }
+
+/* 4. Progress bar */
+.info { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 8px; }
+.bar { height: 12px; background: var(--garis); border-radius: 99px; overflow: hidden; }
+.isi { height: 100%; width: 0; background: var(--aksen); transition: width .3s; }
+
+/* 5. Tombol filter */
+.filter { display: flex; gap: 8px; margin: 14px 0; }
+.filter button {
+  flex: 1; padding: 8px; border: 2px solid var(--garis); border-radius: 10px;
+  background: transparent; cursor: pointer; font-weight: 600;
+}
+/* Kelas "aktif" ditambah lewat JavaScript */
+.filter button.aktif { background: var(--stabilo); border-color: var(--tinta); color: #14213d; }
+
+/* 6. Daftar tugas */
+ul { list-style: none; margin: 0; padding: 0; }
+li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 4px; border-bottom: 1px dashed var(--garis);
+}
+li:last-child { border-bottom: 0; }
+li input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--aksen); }
+.teks { flex: 1; word-break: break-word; }
+li.selesai .teks { text-decoration: line-through; color: var(--pudar); }
+.badge { font-size: .75rem; font-weight: 600; padding: 2px 8px; border-radius: 99px; color: #fff; }
+.Tinggi { background: var(--tinggi); } .Sedang { background: var(--sedang); } .Rendah { background: var(--rendah); }
+.hapus { border: 0; background: none; color: var(--pudar); font-size: 1.3rem; cursor: pointer; }
+.hapus:hover { color: var(--tinggi); }
+.kosong { text-align: center; color: var(--pudar); padding: 18px 0; }
+.bawah { text-align: right; }
+.link { background: none; border: 0; color: var(--aksen); text-decoration: underline; cursor: pointer; }
