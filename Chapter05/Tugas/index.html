@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Cafe Jee — kopi yang diracik dengan rasa, menu comfort food, dan ruang nyaman untuk jeda."
+    />
+    <meta name="theme-color" content="#f8f6ef" />
+    <title>CafeJee — Temukan jeda favoritmu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="auth-required">
+    <section class="auth-screen" id="auth-screen" aria-labelledby="auth-title">
+      <div class="auth-story">
+        <a class="brand brand--auth" href="#auth-screen" aria-label="Cafe Jee">
+          <span class="brand__mark" aria-hidden="true">c<span>.</span></span>
+          <span class="brand__name">cafe jee<span>®</span></span>
+        </a>
+        <div class="auth-story__copy">
+          <span class="auth-story__eyebrow">A LITTLE PAUSE, A LOT OF JOY</span>
+          <h1>Senang kamu<br />mampir <em>lagi.</em></h1>
+          <p>Masuk dulu, lalu temukan kopi dan cerita yang sudah menunggumu.</p>
+        </div>
+        <span class="auth-story__cup" aria-hidden="true">☕</span>
+        <span class="auth-story__sparkle auth-story__sparkle--one" aria-hidden="true">✳</span>
+        <span class="auth-story__sparkle auth-story__sparkle--two" aria-hidden="true">✦</span>
+        <p class="auth-story__footer">GOOD DAYS START HERE · CAFE JEE</p>
+      </div>
+      <div class="auth-form-wrap">
+        <form class="auth-form" id="auth-form">
+          <span class="eyebrow"><span class="eyebrow__line"></span> SELAMAT DATANG</span>
+          <h2 id="auth-title">Masuk ke akunmu</h2>
+          <p class="auth-form__intro">Masukkan akun terlebih dahulu untuk melihat Cafe Jee.</p>
+
+          <div class="auth-tabs" role="group" aria-label="Pilih masuk atau daftar">
+            <button class="auth-tab auth-tab--active" type="button" data-auth-mode="login" aria-pressed="true">Masuk</button>
+            <button class="auth-tab" type="button" data-auth-mode="register" aria-pressed="false">Daftar akun</button>
+          </div>
+
+          <div class="auth-field" id="register-name-field" hidden>
+            <label for="account-name-input">Nama</label>
+            <input id="account-name-input" name="name" type="text" placeholder="Nama lengkap" autocomplete="name" />
+          </div>
+
+          <label for="account-email">Email</label>
+          <input id="account-email" name="email" type="email" placeholder="nama@email.com" autocomplete="username" required />
+
+          <label for="account-password">Kata sandi</label>
+          <input id="account-password" name="password" type="password" placeholder="Minimal 8 karakter" autocomplete="current-password" minlength="8" required />
+
+          <div class="auth-field" id="register-confirm-field" hidden>
+            <label for="account-confirm-password">Ulangi kata sandi</label>
+            <input id="account-confirm-password" name="confirmPassword" type="password" placeholder="Ketik ulang kata sandi" autocomplete="new-password" />
+          </div>
+
+          <div class="auth-field" id="register-role-field" hidden>
+            <label for="account-role-select">Jenis akun</label>
+            <select id="account-role-select" name="role">
+              <option value="buyer">Pembeli</option>
+              <option value="seller">Admin penjual</option>
+            </select>
+          </div>
+
+          <p class="auth-form__notice">Akun demo disimpan di browser ini. Untuk penggunaan nyata, akun harus dikelola server yang aman.</p>
+          <button class="button button--primary button--full" id="auth-submit" type="submit">Masuk ke Cafe Jee <span aria-hidden="true">↗</span></button>
+          <p class="auth-form__error" id="auth-error" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <div class="announcement">
+      <span class="announcement__sparkle" aria-hidden="true">✦</span>
+      <p>Teman terbaik untuk harimu — <strong>gratis es kopi</strong> untuk pesanan pertama!</p>
+      <a href="#menu">Lihat menu <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#beranda" aria-label="Cafe Jee, ke beranda">
+        <span class="brand__mark" aria-hidden="true">c<span>.</span></span>
+        <span class="brand__name">cafe jee<span>®</span></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Buka navigasi</span>
+        <span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Navigasi utama">
+        <a class="nav-link nav-link--active" href="#beranda" aria-current="location">Beranda</a>
+        <a class="nav-link" href="#menu">Menu</a>
+        <a class="nav-link" href="#cerita">Cerita kami</a>
+        <a class="nav-link" href="#lokasi">Lokasi</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="account-control">
+          <span>Halo, <strong id="account-name"></strong><small id="account-role"></small></span>
+          <button class="logout-button" id="logout-button" type="button">Keluar</button>
+        </div>
+        <button class="cart-button" type="button" aria-label="Buka keranjang, 0 item" aria-controls="cart-panel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 8H6" /><circle cx="10" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg>
+          <span class="cart-button__label">Keranjang</span>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="beranda">
+        <div class="hero__copy">
+          <div class="eyebrow"><span class="eyebrow__line"></span> GOOD DAYS START HERE</div>
+          <h1>Rasa yang bikin<br />hari jadi <em>lebih baik.</em></h1>
+          <p class="hero__description">
+            Kopi pilihan, makanan penuh cerita, dan tempat ternyaman untuk jadi diri sendiri.
+            Selalu ada alasan untuk mampir.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#menu">Jelajahi menu <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#cerita"><span class="play-icon" aria-hidden="true">▶</span> Kenalan dengan kami</a>
+          </div>
+          <div class="hero__social-proof">
+            <div class="avatar-stack" aria-hidden="true">
+              <span>R</span><span>A</span><span>N</span><span class="avatar-stack__more">+</span>
+            </div>
+            <div>
+              <div class="stars" aria-label="Rating 4,9 dari 5">★★★★★</div>
+              <p>Disukai <strong>2.000+</strong> teman ngopi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero-photo">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85"
+              alt="Sajian kopi hangat di meja kafe yang nyaman"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="hero-sticker" aria-label="Dibuat dengan sepenuh hati">
+            <span class="hero-sticker__top">MADE WITH</span>
+            <span class="hero-sticker__heart" aria-hidden="true">♥</span>
+            <span class="hero-sticker__bottom">A LITTLE MAGIC</span>
+          </div>
+          <div class="floating-note">
+            <span class="floating-note__icon" aria-hidden="true">☕</span>
+            <span><strong>Freshly brewed</strong><small>setiap hari, buat kamu</small></span>
+          </div>
+          <span class="hero-doodle hero-doodle--one" aria-hidden="true">✳</span>
+          <span class="hero-doodle hero-doodle--two" aria-hidden="true">✦</span>
+        </div>
+      </section>
+
+      <section class="perks" aria-label="Keunggulan Cafe Jee">
+        <div class="perk">
+          <span class="perk__icon" aria-hidden="true">☕</span>
+          <span><strong>Specialty coffee</strong><small>Diracik sepenuh hati</small></span>
+        </div>
+        <span class="perks__divider" aria-hidden="true"></span>
+        <div class="perk">
+          <span class="perk__icon perk__icon--orange" aria-hidden="true">✿</span>
+          <span><strong>Bahan berkualitas</strong><small>Lokal dan selalu segar</small></span>
+        </div>
+        <span class="perks__divider" aria-hidden="true"></span>
+        <div class="perk">
+          <span class="perk__icon perk__icon--green" aria-hidden="true">⌂</span>
+          <span><strong>Ruang nyaman</strong><small>Tempatmu untuk rehat</small></span>
+        </div>
+      </section>
+
+      <section class="menu-section section-wrap" id="menu">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow"><span class="eyebrow__line"></span DARI DAPUR KAMI</div>
+            <h2>Yang lagi <em>jadi favorit.</em></h2>
+          </div>
+          <a class="text-link text-link--dark" href="#menu-grid">Lihat semua menu <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="menu-toolbar">
+          <p>Dibuat fresh, dinikmati pelan-pelan.</p>
+          <div class="filter-list" role="group" aria-label="Filter kategori menu">
+            <button class="filter-button filter-button--active" type="button" data-filter="semua" aria-pressed="true">Semua</button>
+            <button class="filter-button" type="button" data-filter="kopi" aria-pressed="false">Kopi</button>
+            <button class="filter-button" type="button" data-filter="non-kopi" aria-pressed="false">Non-kopi</button>
+            <button class="filter-button" type="button" data-filter="makanan" aria-pressed="false">Makanan</button>
+          </div>
+        </div>
+        <div class="menu-grid" id="menu-grid">
+          <article class="menu-card" data-category="kopi">
+            <div class="menu-card__image">
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80" alt="Es kopi susu gula aren dengan lapisan susu dan kopi" loading="lazy" />
+              <span class="menu-badge">BEST SELLER</span>
+              <button class="quick-add" type="button" aria-label="Tambah Kopi Susu Tetangga ke keranjang" data-name="Kopi Susu Tetangga" data-price="28000">+</button>
+            </div>
+            <div class="menu-card__details">
+              <div><h3>Kopi Susu Tetangga</h3><span class="menu-rating">★ 4.9</span></div>
+              <p>Espresso, susu segar &amp; gula aren</p>
+              <strong class="menu-price">Rp 28.000</strong>
+            </div>
+          </article>
+          <article class="menu-card" data-category="non-kopi">
+            <div class="menu-card__image">
+              <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=80" alt="Matcha latte dingin berwarna hijau lembut" loading="lazy" />
+              <span class="menu-badge menu-badge--soft">FRESH PICK</span>
+              <button class="quick-add" type="button" aria-label="Tambah Matcha Cloud ke keranjang" data-name="Matcha Cloud" data-price="32000">+</button>
+            </div>
+            <div class="menu-card__details">
+              <div><h3>Matcha Cloud</h3><span class="menu-rating">★ 4.8</span></div>
+              <p>Matcha Jepang &amp; creamy oat milk</p>
+              <strong class="menu-price">Rp 32.000</strong>
+            </div>
+          </article>
+          <article class="menu-card" data-category="makanan">
+            <div class="menu-card__image">
+              <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=80" alt="Roti panggang dengan topping alpukat dan telur" loading="lazy" />
+              <span class="menu-badge menu-badge--orange">BRUNCH FAVE</span>
+              <button class="quick-add" type="button" aria-label="Tambah Roti Pagi Ceria ke keranjang" data-name="Roti Pagi Ceria" data-price="42000">+</button>
+            </div>
+            <div class="menu-card__details">
+              <div><h3>Roti Pagi Ceria</h3><span class="menu-rating">★ 4.9</span></div>
+              <p>Sourdough, alpukat &amp; telur sunny side</p>
+              <strong class="menu-price">Rp 42.000</strong>
+            </div>
+          </article>
+          <article class="menu-card" data-category="makanan">
+            <div class="menu-card__image">
+              <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80" alt="Donat artisan dengan lapisan gula berwarna" loading="lazy" />
+              <span class="menu-badge menu-badge--pink">HOMEMADE</span>
+              <button class="quick-add" type="button" aria-label="Tambah Donat Manis Manja ke keranjang" data-name="Donat Manis Manja" data-price="18000">+</button>
+            </div>
+            <div class="menu-card__details">
+              <div><h3>Donat Manis Manja</h3><span class="menu-rating">★ 4.7</span></div>
+              <p>Donat lembut dengan glaze pilihan</p>
+              <strong class="menu-price">Rp 18.000</strong>
+            </div>
+          </article>
+        </div>
+        <div class="menu-bottom"><a class="button button--outline" href="#lokasi">Mampir &amp; coba langsung <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <section class="story-section" id="cerita">
+        <div class="story-visual">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1100&q=85" alt="Barista meracik kopi dengan penuh perhatian" loading="lazy" />
+          <div class="story-note"><span aria-hidden="true">“</span><p>Hal kecil, rasa yang besar.</p></div>
+        </div>
+        <div class="story-copy">
+          <div class="eyebrow"><span class="eyebrow__line"></span CERITA KECIL KAMI</div>
+          <h2>Bukan cuma<br />soal <em>secangkir kopi.</em></h2>
+          <p>
+            Cafe Jee lahir dari ide sederhana: semua orang pantas punya tempat untuk berhenti sebentar.
+            Di sini, biji kopi dari petani lokal bertemu dengan dapur yang penuh rasa ingin tahu.
+          </p>
+          <p>
+            Kami percaya rasa yang baik dimulai dari cerita yang baik. Jadi, duduklah sebentar.
+            Kopi favoritmu sudah hampir siap.
+          </p>
+          <a class="text-link text-link--dark" href="#lokasi">Lebih dekat dengan Cafe Jee <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="quote-strip" aria-label="Ulasan pelanggan">
+        <span class="quote-strip__sparkle" aria-hidden="true">✳</span>
+        <p>“Tempatnya nyaman, kopinya <em>selalu bikin balik lagi.</em>”</p>
+        <span class="quote-strip__by">— Naya, teman Cafe Jee</span>
+        <span class="quote-strip__sparkle quote-strip__sparkle--right" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="visit-section section-wrap" id="lokasi">
+        <div class="visit-copy">
+          <div class="eyebrow"><span class="eyebrow__line"></span KAMI TUNGGU KAMU</div>
+          <h2>Ketemu di<br /><em>tempat favoritmu?</em></h2>
+          <p>Simpan tempat untuk kamu dan orang kesayangan. Isi detailnya, kami siapkan meja terbaik.</p>
+          <div class="visit-details">
+            <div><span class="visit-details__icon" aria-hidden="true">⌖</span><span><strong>Jl. Kopi Senja No. 12</strong><small>Bandung, Jawa Barat</small></span></div>
+            <div><span class="visit-details__icon" aria-hidden="true">◷</span><span><strong>Setiap hari, 08.00–22.00</strong><small>Weekend sampai 23.00</small></span></div>
+          </div>
+        </div>
+        <form class="reservation-form" id="reservation-form">
+          <h3>Reservasi meja</h3>
+          <p class="reservation-form__intro">Biar kami siapkan sambutan hangat buat kamu.</p>
+          <label for="guest-name">Nama kamu</label>
+          <input id="guest-name" name="name" type="text" placeholder="Contoh: Naya Putri" autocomplete="name" required />
+          <div class="form-row">
+            <div>
+              <label for="guest-date">Tanggal</label>
+              <input id="guest-date" name="date" type="date" required />
+            </div>
+            <div>
+              <label for="guest-count">Jumlah orang</label>
+              <select id="guest-count" name="guests">
+                <option value="1">1 orang</option><option value="2" selected>2 orang</option><option value="3">3 orang</option><option value="4">4 orang</option><option value="5">5 orang</option><option value="6">6+ orang</option>
+              </select>
+            </div>
+          </div>
+          <button class="button button--primary button--full" type="submit">Pesan meja <span aria-hidden="true">↗</span></button>
+          <p class="form-message" id="reservation-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="#beranda" aria-label="Cafe Jee, ke beranda">
+            <span class="brand__mark" aria-hidden="true">c<span>.</span></span>
+            <span class="brand__name">cafe jee<span>®</span></span>
+          </a>
+          <p>Menemani jeda, satu teguk dan satu cerita pada satu waktu.</p>
+        </div>
+        <div class="footer-social">
+          <span>IKUTI CERITA KAMI</span>
+          <div><a href="https://instagram.com" aria-label="Instagram Cafe Jee">ig</a><a href="https://tiktok.com" aria-label="TikTok Cafe Jee">tk</a><a href="mailto:halo@cafejee.id" aria-label="Email Cafe Jee">✉</a></div>
+        </div>
+        <a class="back-to-top" href="#beranda" aria-label="Kembali ke atas">↑</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Cafe Jee. Dibuat dengan rasa.</span>
+        <span>Baik di cangkir, hangat di hati <span aria-hidden="true">♥</span></span>
+      </div>
+    </footer>
+
+    <div class="cart-backdrop" hidden></div>
+    <aside class="cart-panel" id="cart-panel" aria-label="Keranjang belanja" aria-hidden="true">
+      <div class="cart-panel__header">
+        <div><span class="eyebrow"><span class="eyebrow__line"></span PESANAN KAMU</span><h2>Keranjang</h2></div>
+        <button class="cart-close" type="button" aria-label="Tutup keranjang">×</button>
+      </div>
+      <div class="cart-items" aria-live="polite"></div>
+      <div class="cart-empty"><span aria-hidden="true">☕</span><strong>Belum ada yang dipilih</strong><p>Yuk, cari teman ngopi favoritmu.</p></div>
+      <div class="cart-panel__footer" hidden>
+        <div class="cart-total"><span>Total sementara</span><strong>Rp 0</strong></div>
+        <button class="button button--primary button--full checkout-button" type="button">Selesaikan pesanan <span aria-hidden="true">↗</span></button>
+        <p>Pesanan kamu akan kami siapkan dengan sepenuh hati.</p>
+      </div>
+    </aside>
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
