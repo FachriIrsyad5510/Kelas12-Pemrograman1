@@ -143,7 +143,16 @@ h1 em, h2 em { color: var(--rust); font-weight: 500; }
 .menu-info p { min-height: 57px; margin: 9px 0 10px; color: #a1a4a8; font-size: 10px; line-height: 1.7; }
 .menu-category { color: #92969b; font-size: 8px; letter-spacing: .12em; }
 .discount-note { margin: 28px 0 0; padding: 13px 15px; border-left: 2px solid var(--olive); background: rgba(210, 213, 218, .08); color: #e0e2e5; font-size: 11px; }
-
+.member-section { padding-top: 81px; padding-bottom: 84px; border-top: 1px solid var(--line); display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 8%; }
+.member-heading h2 { margin: 17px 0 13px; font-family: var(--serif); font-size: clamp(36px, 4vw, 51px); font-weight: 500; line-height: 1.15; letter-spacing: -.045em; }
+.member-heading > p { max-width: 325px; margin: 0 0 22px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+.member-heading .button { min-height: 44px; }
+.member-perks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.member-perk { position: relative; min-height: 205px; padding: 19px 14px; border: 1px solid #3a3d42; background: linear-gradient(145deg, #1d2023, #151719); }
+.perk-number { position: absolute; top: 16px; right: 14px; color: #92969b; font-family: var(--serif); font-size: 11px; }
+.perk-icon { width: 38px; height: 38px; margin: 13px 0 19px; border: 1px solid #676b71; border-radius: 50%; display: grid; place-items: center; color: #e0e2e5; font-family: var(--serif); font-size: 20px; }
+.member-perk h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 16px; font-weight: 500; }
+.member-perk p { margin: 0; color: var(--muted); font-size: 9px; line-height: 1.7; }
 .review-section { padding-top: 100px; padding-bottom: 103px; }
 .review-layout { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 10%; margin-top: 34px; }
 .review-intro h2 { margin-top: 16px; font-size: 43px; }
@@ -231,6 +240,7 @@ h1 em, h2 em { color: var(--rust); font-weight: 500; }
 .modal-emblem svg { display: block; width: 100%; height: 100%; }
 .login-modal h2 { margin: 9px 0 22px; font-family: var(--serif); font-size: 28px; font-weight: 500; }
 .login-tabs { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 21px; border-bottom: 1px solid var(--line); }
+.login-tabs.hidden { display: none; }
 .login-tab { padding: 12px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); cursor: pointer; font-size: 11px; }
 .login-tab.active { border-bottom-color: var(--rust); color: var(--ink); }
 .login-modal form { text-align: left; }
@@ -241,6 +251,9 @@ h1 em, h2 em { color: var(--rust); font-weight: 500; }
 .login-hint { margin: 11px 0; color: var(--muted); font-size: 9px; line-height: 1.6; }
 .form-error { min-height: 14px; margin: 0; color: #d3d5d8; font-size: 10px; }
 .submit-login { width: 100%; margin-top: 9px; }
+.auth-switch { margin: 17px 0 0; color: var(--muted); font-size: 9px; }
+.auth-switch button { padding: 0; border: 0; background: transparent; color: #e0e2e5; cursor: pointer; font-size: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.auth-switch button:hover { color: #fff; }
 .demo-note { margin: 17px 0 0; color: #92969b; font-size: 8px; line-height: 1.6; }
 .cart-backdrop { z-index: 11; display: block; padding: 0; }
 .cart-drawer { position: absolute; top: 0; right: 0; display: flex; flex-direction: column; width: min(100%, 410px); height: 100%; padding: 29px; background: var(--paper); box-shadow: -15px 0 45px rgba(0,0,0,.14); }
@@ -279,6 +292,11 @@ h1 em, h2 em { color: var(--rust); font-weight: 500; }
   .hero { padding-right: 6%; padding-left: 6%; }
   .section-pad { padding-right: 7%; padding-left: 7%; }
   .menu-photo { height: 178px; }
+  .member-section { padding-top: 66px; padding-bottom: 68px; grid-template-columns: 1fr; gap: 25px; }
+  .member-heading h2 { font-size: 40px; }
+  .member-perks { gap: 9px; }
+  .member-perk { min-height: 190px; padding: 15px 11px; }
+  .member-perk h3 { font-size: 14px; }
   .story-details { gap: 17px; }
   .story-photo { height: 230px; }
   .visit-section { grid-template-columns: 1fr 1fr; }
@@ -376,6 +394,9 @@ h1 em, h2 em { color: var(--rust); font-weight: 500; }
   .hero-actions { gap: 15px; }
   .button { gap: 12px; padding: 0 14px; }
   .menu-grid { gap: 24px 11px; }
+  .member-perks { grid-template-columns: 1fr; }
+  .member-perk { min-height: auto; padding: 17px; }
+  .perk-icon { margin: 4px 0 13px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

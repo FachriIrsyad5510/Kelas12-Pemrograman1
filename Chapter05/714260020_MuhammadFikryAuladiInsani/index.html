@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#111315">
   <meta name="description" content="Luna Vesta — caffè italiano bernuansa vintage di dekat Situ Sarkanjut, Garut. Kopi, pastry Prancis, dan pasta dibuat dengan sepenuh hati.">
   <title>Luna Vesta — Caffè, con calma</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
@@ -46,6 +47,7 @@
       <a href="#kunjungi">Kunjungi</a>
       <a href="#cabang">Cabang</a>
       <a href="#reservasi">Reservasi</a>
+      <a href="#member">Registrasi</a>
       <a href="https://www.instagram.com/llev1nnn___/" target="_blank" rel="noopener noreferrer">Owner ↗</a>
     </nav>
     <div class="header-actions">
@@ -175,8 +177,22 @@
       <p class="discount-note hidden" id="discountNote">Benvenuto! Diskon member 10% akan otomatis dihitung pada total pesananmu.</p>
     </section>
 
+    <section class="member-section section-pad" id="member">
+      <div class="member-heading">
+        <div class="section-label"><span>03</span> Il circolo Luna</div>
+        <h2>Jadi bagian dari<br><em>malam Luna.</em></h2>
+        <p>Daftar sebagai member Luna Vesta dan nikmati momen kecil yang terasa lebih istimewa.</p>
+        <button class="button button-dark" id="memberRegisterButton" type="button">Daftar jadi member <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="member-perks">
+        <article class="member-perk"><span class="perk-number">01</span><span class="perk-icon" aria-hidden="true">%</span><h3>Diskon 10%</h3><p>Potongan otomatis untuk pesanan member di keranjang.</p></article>
+        <article class="member-perk"><span class="perk-number">02</span><span class="perk-icon" aria-hidden="true">☾</span><h3>Menu & cerita spesial</h3><p>Dapatkan kabar tentang menu pilihan dan momen terbaru Luna Vesta.</p></article>
+        <article class="member-perk"><span class="perk-number">03</span><span class="perk-icon" aria-hidden="true">♡</span><h3>Lebih dekat dengan Luna</h3><p>Jadi yang pertama mengetahui kabar dan kejutan dari caffè kesayanganmu.</p></article>
+      </div>
+    </section>
+
     <section class="review-section section-pad" id="ulasan">
-      <div class="section-label"><span>03</span> Parole gentili</div>
+      <div class="section-label"><span>04</span> Parole gentili</div>
       <div class="review-layout">
         <div class="review-intro">
           <p class="eyebrow">Cerita dari meja ke meja</p>
@@ -195,7 +211,7 @@
     <section class="visit-section section-pad" id="kunjungi">
       <div class="visit-photo"><img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=1400&q=85" alt="Suasana kafe yang nyaman dengan meja untuk bersantai"><span class="photo-caption">UN PICCOLO POSTO FELICE</span></div>
       <div class="visit-card">
-        <div class="section-label"><span>04</span> Ci trovi qui</div>
+        <div class="section-label"><span>05</span> Ci trovi qui</div>
         <h2>Meja favoritmu<br>sudah <em>menunggu.</em></h2>
         <p class="visit-intro">Mampir untuk kopi pagi, makan siang santai, atau sekadar menikmati sore.</p>
         <div class="visit-detail"><span class="detail-icon">⌖</span><div><strong>Alamat</strong><p>Sekitar Situ Sarkanjut,<br>Kabupaten Garut, Jawa Barat</p></div></div>
@@ -231,7 +247,7 @@
     <section class="branches-section section-pad" id="cabang">
       <div class="branches-heading">
         <div>
-          <div class="section-label"><span>05</span> Un mondo di luna</div>
+          <div class="section-label"><span>07</span> Un mondo di luna</div>
           <h2>Satu cahaya,<br><em>banyak kota.</em></h2>
         </div>
         <p>Dari Garut sampai New York, semoga selalu ada sudut yang terasa seperti rumah.</p>
@@ -296,20 +312,23 @@
       <div class="modal-emblem" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor"/><path d="M30.1 7.4a17.2 17.2 0 1 0 10.6 29.2A18.7 18.7 0 0 1 30.1 7.4Z" fill="currentColor"/><path d="M15 28V18h2.5v7.8h7V28H15Z" fill="var(--paper)"/><circle cx="34.5" cy="13" r="1.2" fill="currentColor"/></svg></div>
       <p class="eyebrow">Benvenuto a Luna Vesta</p>
       <h2 id="modalTitle">Senang bertemu <em>lagi.</em></h2>
-      <div class="login-tabs" role="tablist" aria-label="Jenis akun">
+      <div class="login-tabs" id="loginTabs" role="tablist" aria-label="Jenis akun">
         <button class="login-tab active" data-role="customer" role="tab" aria-selected="true">Pembeli</button>
         <button class="login-tab" data-role="admin" role="tab" aria-selected="false">Admin</button>
       </div>
       <form id="loginForm">
+        <label class="register-field hidden" id="registerNameLabel" for="registerName">Nama</label>
+        <input class="register-field hidden" id="registerName" type="text" placeholder="Nama lengkap" autocomplete="name" minlength="2">
         <label for="loginEmail">Email</label>
         <input id="loginEmail" type="email" placeholder="nama@email.com" autocomplete="email" required>
         <label for="loginPassword">Kata sandi</label>
         <input id="loginPassword" type="password" placeholder="Minimal 6 karakter" autocomplete="current-password" minlength="6" required>
         <p class="login-hint" id="loginHint">Masuk sebagai pembeli untuk mendapat diskon 10%.</p>
         <p class="form-error" id="formError" role="alert"></p>
-        <button class="button button-dark submit-login" type="submit">Masuk ke Luna Vesta <span aria-hidden="true">→</span></button>
+        <button class="button button-dark submit-login" id="authSubmit" type="submit">Masuk ke Luna Vesta <span aria-hidden="true">→</span></button>
       </form>
-      <p class="demo-note">Mode demo: akun pembeli dapat menggunakan email dan kata sandi apa saja. Admin: admin@lunavesta.id / luna123</p>
+      <p class="auth-switch" id="authSwitch"><span id="authSwitchText">Belum menjadi member?</span> <button id="authSwitchButton" type="button">Daftar di sini</button></p>
+      <p class="demo-note" id="demoNote">Mode demo: login pembeli dapat menggunakan email dan kata sandi apa saja. Admin: admin@lunavesta.id / luna123</p>
     </section>
   </div>
 
