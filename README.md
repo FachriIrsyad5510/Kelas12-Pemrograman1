@@ -1,5 +1,14 @@
 # Kelas12-Pemrograman1
 Ini adalah repository untuk Matkul Pemrograman I kelas 12 (B) 
+## Kelompok Tugas Besar
+1.Fikry,Mukti
+2.Najmi,Intan
+3.Ridhwan,Hafsoh
+4.Daniyal,Teuku
+5.Darwisy,Brian
+6.Jesar,ihsan
+7.Sajid ALGANI,Fadhil
+8.Fahri,ainah
 
 ## Rencana Pembelajaran
 
